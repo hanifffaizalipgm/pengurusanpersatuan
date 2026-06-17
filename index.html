@@ -225,7 +225,7 @@
                 © 2025–2026 Unit Kokurikulum IPG Kampus Darulaman<br>
                 Dibangunkan oleh Penyelaras MPU3221 IPGKDA<br>
                 <span style="color:var(--primary-light); font-size:8px; letter-spacing:0.05em;">
-                    v2.0 · Sistem Penilaian Kokurikulum MPU3221
+                    v2.1 · Sistem Penilaian Kokurikulum MPU3221
                 </span>
             </p>
         </div>
@@ -245,11 +245,9 @@
         <button onclick="logout()" class="btn-outline px-4 py-2" style="border-radius:20px;">LOGOUT</button>
     </div>
     <div style="padding:20px 24px 0;">
-        <div class="tab-bar" style="max-width:500px;">
+        <div class="tab-bar" style="max-width:320px;">
             <button class="tab active" onclick="showStudentTab('profile')"><i class="fas fa-user me-1"></i> Profil</button>
             <button class="tab" onclick="showStudentTab('peer')"><i class="fas fa-users me-1"></i> Peer Eval</button>
-            <button class="tab" onclick="showStudentTab('rubrik')"><i class="fas fa-list-check me-1"></i> Rubrik</button>
-            <button class="tab" onclick="showStudentTab('result')"><i class="fas fa-chart-simple me-1"></i> Keputusan</button>
         </div>
     </div>
 
@@ -381,125 +379,6 @@
                     <i class="fas fa-users" style="font-size:3rem; margin-bottom:12px; opacity:0.3;"></i>
                     <p style="font-size:13px;">Pilih rakan dari senarai untuk mula menilai</p>
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- TAB: RUBRIK -->
-    <div id="stab-rubrik" style="padding:20px 24px; flex:1; display:none; flex-direction:column; gap:16px;">
-        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-            <div>
-                <h3 style="font-size:16px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">Senarai Semak Rubrik — HP1 &amp; HP5</h3>
-                <p style="font-size:11px; color:var(--text-muted);">Tugasan 1: Penulisan berkaitan konsep, identiti dan kepentingan persatuan di sekolah. Pensyarah menilai dan markah dihantar secara automatik.</p>
-            </div>
-            <div id="rubrikStatusBadge" style="display:none; padding:8px 16px; border-radius:20px; background:#dcfce7; border:1px solid #86efac; font-size:11px; font-weight:700; color:#16a34a;"><i class="fas fa-check-circle me-1"></i> <span id="rubrikStatusText">Dinilai</span></div>
-        </div>
-
-        <!-- HP1 -->
-        <div class="glass p-5">
-            <div style="font-size:10px; font-weight:800; color:var(--secondary); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
-                <i class="fas fa-file-alt"></i> HP1 — Penulisan berkaitan konsep, identiti dan kepentingan persatuan di sekolah (30%)
-            </div>
-            <div style="overflow-x:auto;">
-                <table style="width:100%; border-collapse:collapse; font-size:12px;">
-                    <thead>
-                        <tr style="border-bottom:2px solid var(--border);">
-                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:30px;">#</th>
-                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Kriteria</th>
-                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Penerangan</th>
-                            <th style="padding:8px 10px; text-align:center; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:60px;">Max</th>
-                            <th style="padding:8px 10px; text-align:center; color:var(--secondary); font-size:9px; text-transform:uppercase; width:80px;">Markah</th>
-                        </tr>
-                    </thead>
-                    <tbody id="rubrikHP5Body">
-                        <tr><td colspan="5" style="padding:20px; text-align:center; color:var(--text-light); font-size:11px;"><i class="fas fa-spinner fa-spin"></i> Memuatkan...</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div style="display:flex; justify-content:flex-end; margin-top:12px; padding-top:12px; border-top:1px solid var(--border);">
-                <div style="text-align:right;">
-                    <span style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-right:12px;">Jumlah HP1</span>
-                    <span id="hp5Total" style="font-size:24px; font-weight:800; font-family:'Space Mono',monospace; color:var(--secondary);">—</span>
-                    <span style="font-size:12px; color:var(--text-light);"> / 30</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- HP5 -->
-        <div class="glass p-5">
-            <div style="font-size:10px; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
-                <i class="fas fa-pen-nib"></i> HP5 — Gaya Penulisan &amp; Kemahiran Komunikasi (10%)
-            </div>
-            <div style="overflow-x:auto;">
-                <table style="width:100%; border-collapse:collapse; font-size:12px;">
-                    <thead>
-                        <tr style="border-bottom:2px solid var(--border);">
-                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:30px;">#</th>
-                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Kriteria</th>
-                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Penerangan</th>
-                            <th style="padding:8px 10px; text-align:center; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:60px;">Max</th>
-                            <th style="padding:8px 10px; text-align:center; color:var(--accent); font-size:9px; text-transform:uppercase; width:80px;">Markah</th>
-                        </tr>
-                    </thead>
-                    <tbody id="rubrikHP6Body">
-                        <tr><td colspan="5" style="padding:20px; text-align:center; color:var(--text-light); font-size:11px;"><i class="fas fa-spinner fa-spin"></i> Memuatkan...</td></tr>
-                    </tbody>
-                </table>
-            </div>
-            <div style="display:flex; justify-content:flex-end; margin-top:12px; padding-top:12px; border-top:1px solid var(--border);">
-                <div style="text-align:right;">
-                    <span style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-right:12px;">Jumlah HP5</span>
-                    <span id="hp6Total" style="font-size:24px; font-weight:800; font-family:'Space Mono',monospace; color:var(--accent);">—</span>
-                    <span style="font-size:12px; color:var(--text-light);"> / 10</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tahap Pencapaian HP5 -->
-        <div class="glass p-4" style="background:var(--bg-surface);">
-            <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;">
-                <i class="fas fa-trophy me-1" style="color:var(--accent);"></i> Tahap Pencapaian HP5 — Gaya Penulisan &amp; Kemahiran Komunikasi
-            </div>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:10px;">
-                <div style="padding:12px; border-radius:var(--radius-sm); background:#dbeafe; border:1px solid #93c5fd;">
-                    <div style="font-weight:800; color:#1d4ed8; font-size:13px;">Amat Cemerlang</div>
-                    <div style="font-weight:700; color:#1e40af; font-size:11px;">9.0 - 10.0%</div>
-                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Maklumat disampaikan secara jelas, tersusun dan meyakinkan. Gaya bahasa sesuai dengan tujuan rasmi penulisan.</div>
-                </div>
-                <div style="padding:12px; border-radius:var(--radius-sm); background:#dcfce7; border:1px solid #86efac;">
-                    <div style="font-weight:800; color:#16a34a; font-size:13px;">Cemerlang</div>
-                    <div style="font-weight:700; color:#166534; font-size:11px;">7.5 - 8.9%</div>
-                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Maklumat disampaikan secara jelas, tersusun dan meyakinkan. Gaya bahasa sesuai dengan tujuan rasmi penulisan.</div>
-                </div>
-                <div style="padding:12px; border-radius:var(--radius-sm); background:#fef9c3; border:1px solid #fde047;">
-                    <div style="font-weight:800; color:#ca8a04; font-size:13px;">Kepujian</div>
-                    <div style="font-weight:700; color:#a16207; font-size:11px;">6.0 - 7.4%</div>
-                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Penyampaian agak jelas, namun terdapat beberapa kekeliruan dalam struktur ayat atau penggunaan istilah.</div>
-                </div>
-                <div style="padding:12px; border-radius:var(--radius-sm); background:#fef3c7; border:1px solid #fcd34d;">
-                    <div style="font-weight:800; color:#d97706; font-size:13px;">Sederhana</div>
-                    <div style="font-weight:700; color:#b45309; font-size:11px;">5.0 - 5.9%</div>
-                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Penyampaian kurang jelas dan tidak konsisten, struktur idea tidak teratur, komunikasi kumpulan tidak menyerlah.</div>
-                </div>
-                <div style="padding:12px; border-radius:var(--radius-sm); background:#fee2e2; border:1px solid #fca5a5;">
-                    <div style="font-weight:800; color:#dc2626; font-size:13px;">Lemah</div>
-                    <div style="font-weight:700; color:#991b1b; font-size:11px;">&lt; 5.0%</div>
-                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Penulisan tidak menyampaikan maklumat dengan jelas, tiada tanda komunikasi berkesan, bahasa tidak sesuai dan bersifat umum.</div>
-                </div>
-            </div>
-        </div>
-
-        <p style="font-size:10px; color:var(--text-light); text-align:center; padding-bottom:10px;"><i class="fas fa-lock me-1"></i> Penilaian ini dilakukan oleh pensyarah. Paparan ini adalah untuk rujukan pelajar sahaja.</p>
-    </div>
-
-    <!-- TAB: KEPUTUSAN -->
-    <div id="stab-result" style="padding:20px 24px; flex:1; display:none;">
-        <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:400px; gap:24px; max-width:480px; margin:0 auto; text-align:center;">
-            <div style="width:80px; height:80px; border-radius:50%; background:#dbeafe; border:2px solid #93c5fd; display:flex; align-items:center; justify-content:center;"><i class="fas fa-lock" style="font-size:2rem; color:var(--primary);"></i></div>
-            <div><h3 style="font-size:20px; font-weight:800; color:var(--text-primary); margin-bottom:10px;">Markah Adalah Sulit</h3><p style="font-size:13px; color:var(--text-secondary); line-height:1.8;">Markah akhir bagi HP1, HP5, HP8 dan HP10 anda adalah <strong style="color:var(--text-primary);">maklumat sulit</strong> dan hanya diketahui oleh pensyarah anda.<br><br>Sila rujuk pensyarah secara langsung untuk mengetahui markah anda setelah proses pemarkahan selesai.</p></div>
-            <div id="myPeerStatusBox" style="width:100%; padding:20px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">
-                <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px; text-align:left;"><i class="fas fa-chart-radar me-1"></i> Status Peer Evaluation Anda</div>
-                <div id="myPeerStatusContent"><div style="text-align:center; color:var(--text-light); padding:20px;"><i class="fas fa-spinner fa-spin"></i></div></div>
             </div>
         </div>
     </div>
@@ -729,7 +608,7 @@
 
 <script>
 // ============================================================
-// KONFIGURASI - URL WEBAPP ANDA (TELAH DIKEMAS KINI)
+// KONFIGURASI - URL WEBAPP ANDA
 // ============================================================
 const API = "https://script.google.com/macros/s/AKfycbwjKxn-j9CWScfdbEsS_7TMJKht9p-Kf7zAqQ-2xayDFpJJe2O60FjrmoAP5UWjBW9drw/exec";
 
@@ -797,7 +676,7 @@ function setType(t) {
 
 async function handleAuth() {
     const id = document.getElementById('idIn').value.trim();
-    const pw = document.getElementById('pwIn').value;
+    const pw = document.getElementById('pwIn').value.trim();
     if (!id) return showToast('Sila masukkan maklumat!', 'err');
     const btn = document.getElementById('loginBtn');
     btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> VERIFYING...';
@@ -811,6 +690,7 @@ async function handleAuth() {
                 renderStudent(o.data);
             } else { showToast(o.message, 'err'); }
         } else {
+            if (!pw) { showToast('Sila masukkan password!', 'err'); btn.disabled = false; btn.innerHTML = 'MASUK SISTEM'; return; }
             const r = await fetch(`${API}?action=lecturerLogin&email=${encodeURIComponent(id)}&pass=${encodeURIComponent(pw)}`);
             const o = await r.json();
             if (o.status === "success") {
@@ -839,22 +719,19 @@ function renderStudent(d) {
     }
     loadImage(document.getElementById('sImg'), document.getElementById('sPl'), d.Link_Gambar);
     loadPeerList();
-    loadRubrikStatus();
-    loadMyResult();
 }
 
 function showStudentTab(t) {
-    ['profile','peer','rubrik','result'].forEach(id => {
+    ['profile','peer'].forEach(id => {
         const el = document.getElementById('stab-'+id);
         if (el) el.style.display = 'none';
     });
     const target = document.getElementById('stab-'+t);
     if (target) target.style.display = 'flex';
     document.querySelectorAll('#studentDash .tab').forEach((btn,i) => {
-        const tabs = ['profile','peer','rubrik','result'];
+        const tabs = ['profile','peer'];
         btn.classList.toggle('active', tabs[i] === t);
     });
-    if (t === 'rubrik') loadRubrikStatus();
 }
 
 async function loadPeerList() {
@@ -1034,136 +911,6 @@ function markPeerDone(tgKP) {
             card.querySelector('div').insertAdjacentHTML('beforeend',
                 '<i class="fas fa-check" style="color:#22c55e; font-size:11px;"></i>');
         }
-    }
-}
-
-// ============================================================
-// RUBRIK DATA - HP1 (14 KRITERIA) & HP5 (3 KRITERIA)
-// ============================================================
-const RUBRIK_HP5_DATA = [
-    {no:1,  nama:"Penulisan (Konsep, Identiti & Kepentingan)", penerangan:"Penulisan yang amat lengkap dengan mengaitkan berkaitan konsep, identiti dan kepentingan persatuan di sekolah", max:5},
-    {no:2,  nama:"Tajuk Kertas Cadangan",        penerangan:"Tajuk sangat jelas, tepat, kreatif dan mencerminkan tujuan penubuhan persatuan", max:2},
-    {no:3,  nama:"Jenis Persatuan",              penerangan:"Jenis persatuan dinyatakan dengan tepat dan disokong justifikasi yang jelas", max:2},
-    {no:4,  nama:"Pengenalan & Latar Belakang",  penerangan:"Pengenalan lengkap, menarik dan menerangkan latar belakang persatuan dengan sangat jelas", max:3},
-    {no:5,  nama:"Tujuan Penubuhan",             penerangan:"Tujuan dinyatakan dengan lengkap, jelas dan relevan dengan penubuhan persatuan", max:3},
-    {no:6,  nama:"Objektif",                     penerangan:"Objektif lengkap, spesifik, boleh diukur dan selaras dengan tujuan persatuan", max:2},
-    {no:7,  nama:"Logo dan Moto",                penerangan:"Logo dan moto sangat kreatif, bermakna dan mencerminkan identiti persatuan", max:3},
-    {no:8,  nama:"Misi dan Visi",                penerangan:"Misi dan visi sangat jelas, realistik dan sejajar dengan matlamat persatuan", max:2},
-    {no:9,  nama:"Jawatankuasa & Tugas",         penerangan:"Struktur jawatankuasa lengkap dengan pembahagian tugas yang terperinci dan sistematik", max:2},
-    {no:10, nama:"Perlembagaan & Peraturan",     penerangan:"Perlembagaan dan peraturan lengkap, tersusun dan merangkumi semua aspek penting persatuan", max:2},
-    {no:11, nama:"Perancangan Aktiviti & Takwim",penerangan:"Perancangan aktiviti lengkap, kreatif, realistik dan disertakan takwim tahunan yang teratur", max:2},
-    {no:12, nama:"Carta Alir Penubuhan",         penerangan:"Carta alir lengkap, tepat dan menunjukkan semua proses penubuhan secara sistematik", max:1},
-    {no:13, nama:"Surat Penubuhan",              penerangan:"Surat lengkap, mengikut format rasmi dan bebas kesalahan", max:1},
-    {no:14, nama:"Penutup",                      penerangan:"Penutup lengkap, kemas dan merumuskan keseluruhan cadangan dengan berkesan", max:1},
-];
-
-// HP5 - Gaya Penulisan & Kemahiran Komunikasi
-const RUBRIK_HP6_DATA = [
-    {no:1, nama:"Gaya Bahasa & Laras", penerangan:"Penggunaan bahasa rasmi, tatabahasa betul, kosa kata sesuai konteks. Tiada singkatan/slanga.", max:3},
-    {no:2, nama:"Kejelasan & Struktur Idea", penerangan:"Susunan bahagian konsisten, perenggan tersusun, idea mengalir dengan lancar dan meyakinkan.", max:4},
-    {no:3, nama:"Kolaborasi & Komunikasi Kumpulan", penerangan:"Bukti kesepaduan dari segi gaya penulisan. Kandungan selari dan tidak berulang antara ahli.", max:3},
-];
-
-// ============================================================
-// RUBRIK FUNCTIONS
-// ============================================================
-async function loadRubrikStatus() {
-    if (!curUser) return;
-    renderRubrikTables(null);
-    try {
-        const r = await fetch(`${API}?action=getRubrikStatus&noKP=${encodeURIComponent(curUser.No_KP)}`);
-        const o = await r.json();
-        if (o.status === 'success' && o.ada) {
-            document.getElementById('rubrikStatusBadge').style.display = 'flex';
-            document.getElementById('rubrikStatusText').textContent = `Dinilai pada ${o.tarikh ? new Date(o.tarikh).toLocaleDateString('ms-MY') : '--'}`;
-            renderRubrikTables(o);
-        } else {
-            document.getElementById('rubrikStatusBadge').style.display = 'none';
-            renderRubrikTables(null);
-        }
-    } catch(e) {
-        renderRubrikTables(null);
-    }
-}
-
-function renderRubrikTables(data) {
-    let hp5Sum = 0;
-    const hp5Rows = RUBRIK_HP5_DATA.map((item, idx) => {
-        const mark = data ? (Number(data['r'+(idx+1)]) || 0) : null;
-        if (mark !== null) hp5Sum += mark;
-        const pct  = mark !== null ? (mark/item.max)*100 : 0;
-        const col  = pct >= 80 ? '#22c55e' : pct >= 50 ? '#eab308' : pct > 0 ? '#ef4444' : 'var(--text-light)';
-        return `<tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:10px; color:var(--text-muted); font-family:'Space Mono',monospace; font-size:10px; text-align:center;">${item.no}</td>
-            <td style="padding:10px; font-weight:600; font-size:12px; color:var(--text-primary);">${item.nama}</td>
-            <td style="padding:10px; font-size:11px; color:var(--text-secondary); line-height:1.5;">${item.penerangan}</td>
-            <td style="padding:10px; text-align:center; font-family:'Space Mono',monospace; font-size:11px; color:var(--text-muted);">${item.max}</td>
-            <td style="padding:10px; text-align:center;">
-                ${data ? `<span style="font-family:'Space Mono',monospace; font-size:15px; font-weight:800; color:${col};">${mark}</span>`
-                       : `<span style="color:var(--text-light); font-size:11px;">—</span>`}
-            </td>
-        </tr>`;
-    }).join('');
-    document.getElementById('rubrikHP5Body').innerHTML = hp5Rows;
-    document.getElementById('hp5Total').textContent = data ? hp5Sum : '—';
-
-    let hp6Sum = 0;
-    const hp6Rows = RUBRIK_HP6_DATA.map((item, idx) => {
-        const mark = data ? (Number(data['g'+(idx+1)]) || 0) : null;
-        if (mark !== null) hp6Sum += mark;
-        const pct  = mark !== null ? (mark/item.max)*100 : 0;
-        const col  = pct >= 80 ? '#0ea5e9' : pct >= 50 ? '#eab308' : pct > 0 ? '#ef4444' : 'var(--text-light)';
-        return `<tr style="border-bottom:1px solid var(--border);">
-            <td style="padding:10px; color:var(--text-muted); font-family:'Space Mono',monospace; font-size:10px; text-align:center;">${item.no}</td>
-            <td style="padding:10px; font-weight:600; font-size:12px; color:var(--text-primary);">${item.nama}</td>
-            <td style="padding:10px; font-size:11px; color:var(--text-secondary); line-height:1.5;">${item.penerangan}</td>
-            <td style="padding:10px; text-align:center; font-family:'Space Mono',monospace; font-size:11px; color:var(--text-muted);">${item.max}</td>
-            <td style="padding:10px; text-align:center;">
-                ${data ? `<span style="font-family:'Space Mono',monospace; font-size:15px; font-weight:800; color:${col};">${mark}</span>`
-                       : `<span style="color:var(--text-light); font-size:11px;">—</span>`}
-            </td>
-        </tr>`;
-    }).join('');
-    document.getElementById('rubrikHP6Body').innerHTML = hp6Rows;
-    document.getElementById('hp6Total').textContent = data ? hp6Sum : '—';
-}
-
-async function loadMyResult() {
-    if (!curUser) return;
-    const box = document.getElementById('myPeerStatusContent');
-    if (!box) return;
-    try {
-        const r = await fetch(`${API}?action=getClassmates&noKP=${encodeURIComponent(curUser.No_KP)}&kelas=${encodeURIComponent(curUser.Kelas)}`);
-        const o = await r.json();
-        if (o.status === 'success') {
-            const total = o.data.length;
-            const done  = (o.done || []).length;
-            const pct   = total > 0 ? Math.round((done/total)*100) : 0;
-            const allDone = done === total && total > 0;
-            box.innerHTML = `
-                <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
-                    <div style="flex:1;">
-                        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-                            <span style="font-size:12px; color:var(--text-muted);">Kemajuan Penilaian</span>
-                            <span style="font-size:12px; font-weight:800; font-family:'Space Mono',monospace; color:${allDone?'#22c55e':'var(--primary)'};">${done} / ${total}</span>
-                        </div>
-                        <div style="height:8px; background:var(--bg-surface); border-radius:8px; overflow:hidden;">
-                            <div style="height:100%; width:${pct}%; background:${allDone?'linear-gradient(90deg,#22c55e,#0ea5e9)':'linear-gradient(90deg,var(--primary),var(--secondary))'}; border-radius:8px; transition:width 0.5s;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div style="display:flex; align-items:center; gap:10px; padding:14px; border-radius:var(--radius-sm); background:${allDone?'#dcfce7':'#dbeafe'}; border:1px solid ${allDone?'#86efac':'#93c5fd'};">
-                    <i class="fas ${allDone?'fa-circle-check':'fa-hourglass-half'}" style="font-size:1.4rem; color:${allDone?'#22c55e':'var(--primary)'};"></i>
-                    <div>
-                        <div style="font-size:12px; font-weight:700; color:${allDone?'#166534':'#1e40af'};">${allDone ? 'Semua penilaian selesai!' : 'Masih ada rakan yang belum dinilai'}</div>
-                        <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">${allDone ? 'Terima kasih. Data anda telah dihantar kepada pensyarah.' : `Pergi ke tab Peer Eval untuk melengkapkan ${total-done} penilaian yang tinggal.`}</div>
-                    </div>
-                </div>`;
-        } else {
-            box.innerHTML = `<p style="font-size:12px; color:var(--text-muted); text-align:center;">Tiada data kelas ditemui.</p>`;
-        }
-    } catch(e) {
-        box.innerHTML = `<p style="font-size:12px; color:var(--text-muted); text-align:center;">Ralat memuatkan status.</p>`;
     }
 }
 
