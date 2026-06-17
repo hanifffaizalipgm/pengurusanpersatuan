@@ -388,45 +388,107 @@
     <!-- TAB: RUBRIK -->
     <div id="stab-rubrik" style="padding:20px 24px; flex:1; display:none; flex-direction:column; gap:16px;">
         <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-            <div><h3 style="font-size:16px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">Senarai Semak Rubrik — HP1 &amp; HP5</h3><p style="font-size:11px; color:var(--text-muted);">Tugasan 1: Kertas Cadangan Persatuan. Pensyarah menilai dan markah dihantar secara automatik.</p></div>
+            <div>
+                <h3 style="font-size:16px; font-weight:800; color:var(--text-primary); margin-bottom:4px;">Senarai Semak Rubrik — HP1 &amp; HP5</h3>
+                <p style="font-size:11px; color:var(--text-muted);">Tugasan 1: Penulisan berkaitan konsep, identiti dan kepentingan persatuan di sekolah. Pensyarah menilai dan markah dihantar secara automatik.</p>
+            </div>
             <div id="rubrikStatusBadge" style="display:none; padding:8px 16px; border-radius:20px; background:#dcfce7; border:1px solid #86efac; font-size:11px; font-weight:700; color:#16a34a;"><i class="fas fa-check-circle me-1"></i> <span id="rubrikStatusText">Dinilai</span></div>
         </div>
+
+        <!-- HP1 -->
         <div class="glass p-5">
-            <div style="font-size:10px; font-weight:800; color:var(--secondary); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; display:flex; align-items:center; gap:8px;"><i class="fas fa-file-alt"></i> HP1 — Kertas Cadangan (Max: 30 markah)</div>
+            <div style="font-size:10px; font-weight:800; color:var(--secondary); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+                <i class="fas fa-file-alt"></i> HP1 — Penulisan berkaitan konsep, identiti dan kepentingan persatuan di sekolah (30%)
+            </div>
             <div style="overflow-x:auto;">
                 <table style="width:100%; border-collapse:collapse; font-size:12px;">
-                    <thead><tr style="border-bottom:2px solid var(--border);">
-                        <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:30px;">#</th>
-                        <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Kriteria</th>
-                        <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Penerangan</th>
-                        <th style="padding:8px 10px; text-align:center; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:60px;">Max</th>
-                        <th style="padding:8px 10px; text-align:center; color:var(--secondary); font-size:9px; text-transform:uppercase; width:80px;">Markah</th>
-                    </tr></thead>
-                    <tbody id="rubrikHP5Body"><tr><td colspan="5" style="padding:20px; text-align:center; color:var(--text-light); font-size:11px;"><i class="fas fa-spinner fa-spin"></i> Memuatkan...</td></tr></tbody>
+                    <thead>
+                        <tr style="border-bottom:2px solid var(--border);">
+                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:30px;">#</th>
+                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Kriteria</th>
+                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Penerangan</th>
+                            <th style="padding:8px 10px; text-align:center; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:60px;">Max</th>
+                            <th style="padding:8px 10px; text-align:center; color:var(--secondary); font-size:9px; text-transform:uppercase; width:80px;">Markah</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rubrikHP5Body">
+                        <tr><td colspan="5" style="padding:20px; text-align:center; color:var(--text-light); font-size:11px;"><i class="fas fa-spinner fa-spin"></i> Memuatkan...</td></tr>
+                    </tbody>
                 </table>
             </div>
             <div style="display:flex; justify-content:flex-end; margin-top:12px; padding-top:12px; border-top:1px solid var(--border);">
-                <div style="text-align:right;"><span style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-right:12px;">Jumlah HP1</span><span id="hp5Total" style="font-size:24px; font-weight:800; font-family:'Space Mono',monospace; color:var(--secondary);">—</span><span style="font-size:12px; color:var(--text-light);"> / 30</span></div>
+                <div style="text-align:right;">
+                    <span style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-right:12px;">Jumlah HP1</span>
+                    <span id="hp5Total" style="font-size:24px; font-weight:800; font-family:'Space Mono',monospace; color:var(--secondary);">—</span>
+                    <span style="font-size:12px; color:var(--text-light);"> / 30</span>
+                </div>
             </div>
         </div>
+
+        <!-- HP5 -->
         <div class="glass p-5">
-            <div style="font-size:10px; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; display:flex; align-items:center; gap:8px;"><i class="fas fa-pen-nib"></i> HP5 — Gaya Penulisan &amp; Komunikasi (Max: 10 markah)</div>
+            <div style="font-size:10px; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
+                <i class="fas fa-pen-nib"></i> HP5 — Gaya Penulisan &amp; Kemahiran Komunikasi (10%)
+            </div>
             <div style="overflow-x:auto;">
                 <table style="width:100%; border-collapse:collapse; font-size:12px;">
-                    <thead><tr style="border-bottom:2px solid var(--border);">
-                        <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:30px;">#</th>
-                        <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Kriteria</th>
-                        <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Penerangan</th>
-                        <th style="padding:8px 10px; text-align:center; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:60px;">Max</th>
-                        <th style="padding:8px 10px; text-align:center; color:var(--accent); font-size:9px; text-transform:uppercase; width:80px;">Markah</th>
-                    </tr></thead>
-                    <tbody id="rubrikHP6Body"><tr><td colspan="5" style="padding:20px; text-align:center; color:var(--text-light); font-size:11px;"><i class="fas fa-spinner fa-spin"></i> Memuatkan...</td></tr></tbody>
+                    <thead>
+                        <tr style="border-bottom:2px solid var(--border);">
+                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:30px;">#</th>
+                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Kriteria</th>
+                            <th style="padding:8px 10px; text-align:left; color:var(--text-muted); font-size:9px; text-transform:uppercase;">Penerangan</th>
+                            <th style="padding:8px 10px; text-align:center; color:var(--text-muted); font-size:9px; text-transform:uppercase; width:60px;">Max</th>
+                            <th style="padding:8px 10px; text-align:center; color:var(--accent); font-size:9px; text-transform:uppercase; width:80px;">Markah</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rubrikHP6Body">
+                        <tr><td colspan="5" style="padding:20px; text-align:center; color:var(--text-light); font-size:11px;"><i class="fas fa-spinner fa-spin"></i> Memuatkan...</td></tr>
+                    </tbody>
                 </table>
             </div>
             <div style="display:flex; justify-content:flex-end; margin-top:12px; padding-top:12px; border-top:1px solid var(--border);">
-                <div style="text-align:right;"><span style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-right:12px;">Jumlah HP5</span><span id="hp6Total" style="font-size:24px; font-weight:800; font-family:'Space Mono',monospace; color:var(--accent);">—</span><span style="font-size:12px; color:var(--text-light);"> / 10</span></div>
+                <div style="text-align:right;">
+                    <span style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-right:12px;">Jumlah HP5</span>
+                    <span id="hp6Total" style="font-size:24px; font-weight:800; font-family:'Space Mono',monospace; color:var(--accent);">—</span>
+                    <span style="font-size:12px; color:var(--text-light);"> / 10</span>
+                </div>
             </div>
         </div>
+
+        <!-- Tahap Pencapaian HP5 -->
+        <div class="glass p-4" style="background:var(--bg-surface);">
+            <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;">
+                <i class="fas fa-trophy me-1" style="color:var(--accent);"></i> Tahap Pencapaian HP5 — Gaya Penulisan &amp; Kemahiran Komunikasi
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); gap:10px;">
+                <div style="padding:12px; border-radius:var(--radius-sm); background:#dbeafe; border:1px solid #93c5fd;">
+                    <div style="font-weight:800; color:#1d4ed8; font-size:13px;">Amat Cemerlang</div>
+                    <div style="font-weight:700; color:#1e40af; font-size:11px;">9.0 - 10.0%</div>
+                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Maklumat disampaikan secara jelas, tersusun dan meyakinkan. Gaya bahasa sesuai dengan tujuan rasmi penulisan.</div>
+                </div>
+                <div style="padding:12px; border-radius:var(--radius-sm); background:#dcfce7; border:1px solid #86efac;">
+                    <div style="font-weight:800; color:#16a34a; font-size:13px;">Cemerlang</div>
+                    <div style="font-weight:700; color:#166534; font-size:11px;">7.5 - 8.9%</div>
+                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Maklumat disampaikan secara jelas, tersusun dan meyakinkan. Gaya bahasa sesuai dengan tujuan rasmi penulisan.</div>
+                </div>
+                <div style="padding:12px; border-radius:var(--radius-sm); background:#fef9c3; border:1px solid #fde047;">
+                    <div style="font-weight:800; color:#ca8a04; font-size:13px;">Kepujian</div>
+                    <div style="font-weight:700; color:#a16207; font-size:11px;">6.0 - 7.4%</div>
+                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Penyampaian agak jelas, namun terdapat beberapa kekeliruan dalam struktur ayat atau penggunaan istilah.</div>
+                </div>
+                <div style="padding:12px; border-radius:var(--radius-sm); background:#fef3c7; border:1px solid #fcd34d;">
+                    <div style="font-weight:800; color:#d97706; font-size:13px;">Sederhana</div>
+                    <div style="font-weight:700; color:#b45309; font-size:11px;">5.0 - 5.9%</div>
+                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Penyampaian kurang jelas dan tidak konsisten, struktur idea tidak teratur, komunikasi kumpulan tidak menyerlah.</div>
+                </div>
+                <div style="padding:12px; border-radius:var(--radius-sm); background:#fee2e2; border:1px solid #fca5a5;">
+                    <div style="font-weight:800; color:#dc2626; font-size:13px;">Lemah</div>
+                    <div style="font-weight:700; color:#991b1b; font-size:11px;">&lt; 5.0%</div>
+                    <div style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Penulisan tidak menyampaikan maklumat dengan jelas, tiada tanda komunikasi berkesan, bahasa tidak sesuai dan bersifat umum.</div>
+                </div>
+            </div>
+        </div>
+
         <p style="font-size:10px; color:var(--text-light); text-align:center; padding-bottom:10px;"><i class="fas fa-lock me-1"></i> Penilaian ini dilakukan oleh pensyarah. Paparan ini adalah untuk rujukan pelajar sahaja.</p>
     </div>
 
@@ -490,13 +552,25 @@
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
                         <div style="padding:20px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border);">
                             <div style="font-size:10px; font-weight:800; color:var(--primary); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; border-bottom:1px solid var(--border); padding-bottom:10px;">HPK1 (40%)</div>
-                            <div style="margin-bottom:10px;"><label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP1 — Kertas Cadangan (Max 30)</label><input type="number" id="h1" placeholder="0–30" oninput="calc(); checkLimits();" min="0" max="30" class="w-full"></div>
-                            <div><label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP5 — Gaya Penulisan (Max 10)</label><input type="number" id="h5" placeholder="0–10" oninput="calc(); checkLimits();" min="0" max="10" class="w-full"></div>
+                            <div style="margin-bottom:10px;">
+                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP1 — Konsep, Identiti &amp; Kepentingan Persatuan (Max 30)</label>
+                                <input type="number" id="h1" placeholder="0–30" oninput="calc(); checkLimits();" min="0" max="30" class="w-full">
+                            </div>
+                            <div>
+                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP5 — Gaya Penulisan &amp; Komunikasi (Max 10)</label>
+                                <input type="number" id="h5" placeholder="0–10" oninput="calc(); checkLimits();" min="0" max="10" class="w-full">
+                            </div>
                         </div>
                         <div style="padding:20px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border);">
                             <div style="font-size:10px; font-weight:800; color:var(--secondary); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; border-bottom:1px solid var(--border); padding-bottom:10px;">HPK2 (60%)</div>
-                            <div style="margin-bottom:10px;"><label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP8 — Penganjuran &amp; Kepimpinan (Max 30)</label><input type="number" id="h8" placeholder="0–30" oninput="calc(); checkLimits();" min="0" max="30" class="w-full" style="border-color:#bae6fd;"></div>
-                            <div><label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP10 — Pelaksanaan Aktiviti (Max 30)</label><input type="number" id="h10" placeholder="0–30" oninput="calc(); checkLimits();" min="0" max="30" class="w-full"></div>
+                            <div style="margin-bottom:10px;">
+                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP8 — Penganjuran &amp; Kepimpinan (Max 30)</label>
+                                <input type="number" id="h8" placeholder="0–30" oninput="calc(); checkLimits();" min="0" max="30" class="w-full" style="border-color:#bae6fd;">
+                            </div>
+                            <div>
+                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP10 — Pelaksanaan Aktiviti (Max 30)</label>
+                                <input type="number" id="h10" placeholder="0–30" oninput="calc(); checkLimits();" min="0" max="30" class="w-full">
+                            </div>
                         </div>
                     </div>
                     <div style="display:flex; justify-content:space-between; align-items:center; background:#dbeafe; padding:20px 24px; border-radius:var(--radius-sm); border:1px solid #93c5fd; margin-bottom:16px;">
@@ -556,11 +630,19 @@
                 <div id="rubrikLecPanel" style="display:none;" class="fade-in">
                     <div class="glass p-6">
                         <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; flex-wrap:wrap; gap:10px;">
-                            <div><div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">RUBRIK TUGASAN 1</div><div id="rubrikLecStudentName" style="font-size:20px; font-weight:700; color:var(--text-primary);">--</div><div id="rubrikLecStudentKP" style="font-size:10px; font-family:'Space Mono',monospace; color:var(--text-muted);">--</div></div>
+                            <div>
+                                <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">RUBRIK TUGASAN 1</div>
+                                <div id="rubrikLecStudentName" style="font-size:20px; font-weight:700; color:var(--text-primary);">--</div>
+                                <div id="rubrikLecStudentKP" style="font-size:10px; font-family:'Space Mono',monospace; color:var(--text-muted);">--</div>
+                            </div>
                             <div id="rubrikLecExistBadge" style="display:none; padding:8px 16px; border-radius:20px; background:#dcfce7; border:1px solid #86efac; font-size:11px; font-weight:700; color:#16a34a;"><i class="fas fa-check-circle me-1"></i> Sudah dinilai</div>
                         </div>
+
+                        <!-- HP1 -->
                         <div style="margin-bottom:20px;">
-                            <div style="font-size:10px; font-weight:800; color:var(--secondary); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid #e9d5ff;"><i class="fas fa-file-alt me-1"></i> HP1 — Kertas Cadangan (Jumlah: 30 markah)</div>
+                            <div style="font-size:10px; font-weight:800; color:var(--secondary); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid #e9d5ff;">
+                                <i class="fas fa-file-alt me-1"></i> HP1 — Penulisan berkaitan konsep, identiti dan kepentingan persatuan di sekolah (30%)
+                            </div>
                             <div id="rubrikHP5Inputs" style="display:flex; flex-direction:column; gap:8px;"></div>
                             <div style="display:flex; justify-content:flex-end; margin-top:12px; align-items:center; gap:10px; flex-wrap:wrap;">
                                 <span style="font-size:11px; color:var(--text-muted);">Jumlah Rubrik HP1:</span>
@@ -568,8 +650,12 @@
                                 <span style="font-size:11px; color:var(--text-light);">/ 30</span>
                             </div>
                         </div>
+
+                        <!-- HP5 -->
                         <div style="margin-bottom:20px;">
-                            <div style="font-size:10px; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid #bae6fd;"><i class="fas fa-pen-nib me-1"></i> HP5 — Kemahiran Komunikasi (Jumlah: 10 markah)</div>
+                            <div style="font-size:10px; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid #bae6fd;">
+                                <i class="fas fa-pen-nib me-1"></i> HP5 — Gaya Penulisan &amp; Kemahiran Komunikasi (10%)
+                            </div>
                             <div id="rubrikHP6Inputs" style="display:flex; flex-direction:column; gap:8px;"></div>
                             <div style="display:flex; justify-content:flex-end; margin-top:12px; align-items:center; gap:12px;">
                                 <span style="font-size:11px; color:var(--text-muted);">Jumlah HP5:</span>
@@ -577,8 +663,29 @@
                                 <span style="font-size:11px; color:var(--text-light);">/ 10</span>
                             </div>
                         </div>
-                        <div id="rubrikAutoMsg" class="alert-info mb-4" style="display:none; border-radius:var(--radius-sm);"><i class="fas fa-info-circle"></i><span>Markah HP akan dikemas kini secara <strong>automatik</strong> dalam rekod pemarkahan pelajar selepas disimpan.</span></div>
-                        <button onclick="saveRubrik()" id="saveRubrikBtn" class="btn-primary w-full p-4 text-sm" style="border-radius:var(--radius-sm);"><i class="fas fa-save me-2"></i> SIMPAN MARKAH RUBRIK (HP1 + HP5)</button>
+
+                        <!-- Tahap Pencapaian HP5 -->
+                        <div style="margin-bottom:16px; padding:14px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border);">
+                            <div style="font-size:9px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:8px;">
+                                <i class="fas fa-trophy me-1"></i> Tahap Pencapaian HP5
+                            </div>
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(130px,1fr)); gap:6px; font-size:10px;">
+                                <div style="padding:6px 10px; background:#dbeafe; border-radius:6px; border:1px solid #93c5fd;"><strong>Amat Cemerlang</strong> 9.0-10.0</div>
+                                <div style="padding:6px 10px; background:#dcfce7; border-radius:6px; border:1px solid #86efac;"><strong>Cemerlang</strong> 7.5-8.9</div>
+                                <div style="padding:6px 10px; background:#fef9c3; border-radius:6px; border:1px solid #fde047;"><strong>Kepujian</strong> 6.0-7.4</div>
+                                <div style="padding:6px 10px; background:#fef3c7; border-radius:6px; border:1px solid #fcd34d;"><strong>Sederhana</strong> 5.0-5.9</div>
+                                <div style="padding:6px 10px; background:#fee2e2; border-radius:6px; border:1px solid #fca5a5;"><strong>Lemah</strong> &lt;5.0</div>
+                            </div>
+                        </div>
+
+                        <div id="rubrikAutoMsg" class="alert-info mb-4" style="display:none; border-radius:var(--radius-sm);">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Markah HP akan dikemas kini secara <strong>automatik</strong> dalam rekod pemarkahan pelajar selepas disimpan.</span>
+                        </div>
+
+                        <button onclick="saveRubrik()" id="saveRubrikBtn" class="btn-primary w-full p-4 text-sm" style="border-radius:var(--radius-sm);">
+                            <i class="fas fa-save me-2"></i> SIMPAN MARKAH RUBRIK (HP1 + HP5)
+                        </button>
                     </div>
                 </div>
             </div>
@@ -930,6 +1037,36 @@ function markPeerDone(tgKP) {
     }
 }
 
+// ============================================================
+// RUBRIK DATA - HP1 (14 KRITERIA) & HP5 (3 KRITERIA)
+// ============================================================
+const RUBRIK_HP5_DATA = [
+    {no:1,  nama:"Penulisan (Konsep, Identiti & Kepentingan)", penerangan:"Penulisan yang amat lengkap dengan mengaitkan berkaitan konsep, identiti dan kepentingan persatuan di sekolah", max:5},
+    {no:2,  nama:"Tajuk Kertas Cadangan",        penerangan:"Tajuk sangat jelas, tepat, kreatif dan mencerminkan tujuan penubuhan persatuan", max:2},
+    {no:3,  nama:"Jenis Persatuan",              penerangan:"Jenis persatuan dinyatakan dengan tepat dan disokong justifikasi yang jelas", max:2},
+    {no:4,  nama:"Pengenalan & Latar Belakang",  penerangan:"Pengenalan lengkap, menarik dan menerangkan latar belakang persatuan dengan sangat jelas", max:3},
+    {no:5,  nama:"Tujuan Penubuhan",             penerangan:"Tujuan dinyatakan dengan lengkap, jelas dan relevan dengan penubuhan persatuan", max:3},
+    {no:6,  nama:"Objektif",                     penerangan:"Objektif lengkap, spesifik, boleh diukur dan selaras dengan tujuan persatuan", max:2},
+    {no:7,  nama:"Logo dan Moto",                penerangan:"Logo dan moto sangat kreatif, bermakna dan mencerminkan identiti persatuan", max:3},
+    {no:8,  nama:"Misi dan Visi",                penerangan:"Misi dan visi sangat jelas, realistik dan sejajar dengan matlamat persatuan", max:2},
+    {no:9,  nama:"Jawatankuasa & Tugas",         penerangan:"Struktur jawatankuasa lengkap dengan pembahagian tugas yang terperinci dan sistematik", max:2},
+    {no:10, nama:"Perlembagaan & Peraturan",     penerangan:"Perlembagaan dan peraturan lengkap, tersusun dan merangkumi semua aspek penting persatuan", max:2},
+    {no:11, nama:"Perancangan Aktiviti & Takwim",penerangan:"Perancangan aktiviti lengkap, kreatif, realistik dan disertakan takwim tahunan yang teratur", max:2},
+    {no:12, nama:"Carta Alir Penubuhan",         penerangan:"Carta alir lengkap, tepat dan menunjukkan semua proses penubuhan secara sistematik", max:1},
+    {no:13, nama:"Surat Penubuhan",              penerangan:"Surat lengkap, mengikut format rasmi dan bebas kesalahan", max:1},
+    {no:14, nama:"Penutup",                      penerangan:"Penutup lengkap, kemas dan merumuskan keseluruhan cadangan dengan berkesan", max:1},
+];
+
+// HP5 - Gaya Penulisan & Kemahiran Komunikasi
+const RUBRIK_HP6_DATA = [
+    {no:1, nama:"Gaya Bahasa & Laras", penerangan:"Penggunaan bahasa rasmi, tatabahasa betul, kosa kata sesuai konteks. Tiada singkatan/slanga.", max:3},
+    {no:2, nama:"Kejelasan & Struktur Idea", penerangan:"Susunan bahagian konsisten, perenggan tersusun, idea mengalir dengan lancar dan meyakinkan.", max:4},
+    {no:3, nama:"Kolaborasi & Komunikasi Kumpulan", penerangan:"Bukti kesepaduan dari segi gaya penulisan. Kandungan selari dan tidak berulang antara ahli.", max:3},
+];
+
+// ============================================================
+// RUBRIK FUNCTIONS
+// ============================================================
 async function loadRubrikStatus() {
     if (!curUser) return;
     renderRubrikTables(null);
@@ -948,28 +1085,6 @@ async function loadRubrikStatus() {
         renderRubrikTables(null);
     }
 }
-
-const RUBRIK_HP5_DATA = [
-    {no:1,  nama:"Tajuk Kertas Cadangan",        penerangan:"Tajuk ringkas, tepat, menggambarkan jenis & tujuan persatuan", max:1},
-    {no:2,  nama:"Jenis Persatuan",              penerangan:"Nyataan jelas tentang kategori: akademik, sukan, kebajikan, dll.", max:1},
-    {no:3,  nama:"Pengenalan",                   penerangan:"Latar belakang penubuhan, isu yang relevan, keperluan persatuan dalam konteks sekolah", max:2},
-    {no:4,  nama:"Tujuan",                       penerangan:"Penjelasan umum mengapa persatuan ini perlu ditubuhkan, selaras dengan dasar sekolah", max:2},
-    {no:5,  nama:"Objektif",                     penerangan:"3–5 objektif spesifik, realistik, boleh diukur, menggunakan kata kerja tindakan", max:3},
-    {no:6,  nama:"Logo dan Moto",                penerangan:"Reka bentuk logo dengan simbol bermakna; moto menyokong misi", max:2},
-    {no:7,  nama:"Misi dan Visi",                penerangan:"Pernyataan misi (fungsi semasa) dan visi (aspirasi masa depan), selaras dengan matlamat sekolah", max:2},
-    {no:8,  nama:"Jawatankuasa & Tugas",         penerangan:"Senarai jawatan, bilangan ahli munasabah, perincian tugas setiap jawatan", max:3},
-    {no:9,  nama:"Perlembagaan & Peraturan",     penerangan:"Struktur formal: keahlian, mesyuarat, pemilihan, tanggungjawab, etika, tindakan disiplin", max:4},
-    {no:10, nama:"Perancangan Aktiviti & Takwim",penerangan:"Sekurang-kurangnya 4 aktiviti dengan tarikh/minggu, selaras objektif. Tambahan jika ada kolaborasi.", max:4},
-    {no:11, nama:"Carta Alir Penubuhan",         penerangan:"Paparan langkah demi langkah dengan elemen visual: permohonan → kelulusan → mesyuarat → pelantikan", max:2},
-    {no:12, nama:"Surat Penubuhan",              penerangan:"Surat rasmi kepada Pengetua/Guru Penyelaras, format betul, bahasa formal, tandatangan", max:2},
-    {no:13, nama:"Penutup",                      penerangan:"Ringkasan isi utama, harapan sokongan, kesediaan ahli, komitmen. Gaya bahasa positif.", max:2},
-];
-
-const RUBRIK_HP6_DATA = [
-    {no:1, nama:"Gaya Bahasa",       penerangan:"Penggunaan bahasa rasmi, tatabahasa betul, kosa kata sesuai konteks. Tiada singkatan/slanga.", max:3},
-    {no:2, nama:"Kejelasan Persembahan Idea", penerangan:"Susunan bahagian konsisten mengikut format kertas cadangan. Perenggan tersusun, idea mengalir.", max:4},
-    {no:3, nama:"Kerjasama Kumpulan",penerangan:"Bukti kesepaduan dari segi gaya penulisan. Kandungan selari dan tidak berulang antara ahli.", max:3},
-];
 
 function renderRubrikTables(data) {
     let hp5Sum = 0;
@@ -1457,27 +1572,29 @@ function renderSummaryTable() {
 }
 
 // ============================================================
-// RUBRIK LECTURER INPUT
+// RUBRIK LECTURER INPUT - HP1 (14 KRITERIA) & HP5 (3 KRITERIA)
 // ============================================================
 const LEC_HP5 = [
-    {id:'r1',  nama:"Tajuk Kertas Cadangan",         max:1},
-    {id:'r2',  nama:"Jenis Persatuan",               max:1},
-    {id:'r3',  nama:"Pengenalan",                    max:2},
-    {id:'r4',  nama:"Tujuan",                        max:2},
-    {id:'r5',  nama:"Objektif",                      max:3},
-    {id:'r6',  nama:"Logo dan Moto",                 max:2},
-    {id:'r7',  nama:"Misi dan Visi",                 max:2},
-    {id:'r8',  nama:"Jawatankuasa & Tugas",           max:3},
-    {id:'r9',  nama:"Perlembagaan & Peraturan",      max:4},
-    {id:'r10', nama:"Perancangan Aktiviti & Takwim", max:4},
-    {id:'r11', nama:"Carta Alir Penubuhan",          max:2},
-    {id:'r12', nama:"Surat Penubuhan",               max:2},
-    {id:'r13', nama:"Penutup",                       max:2},
+    {id:'r1',  nama:"Penulisan (Konsep, Identiti & Kepentingan)", max:5},
+    {id:'r2',  nama:"Tajuk Kertas Cadangan",         max:2},
+    {id:'r3',  nama:"Jenis Persatuan",               max:2},
+    {id:'r4',  nama:"Pengenalan & Latar Belakang",   max:3},
+    {id:'r5',  nama:"Tujuan Penubuhan",              max:3},
+    {id:'r6',  nama:"Objektif",                      max:2},
+    {id:'r7',  nama:"Logo dan Moto",                 max:3},
+    {id:'r8',  nama:"Misi dan Visi",                 max:2},
+    {id:'r9',  nama:"Jawatankuasa & Tugas",          max:2},
+    {id:'r10', nama:"Perlembagaan & Peraturan",      max:2},
+    {id:'r11', nama:"Perancangan Aktiviti & Takwim", max:2},
+    {id:'r12', nama:"Carta Alir Penubuhan",          max:1},
+    {id:'r13', nama:"Surat Penubuhan",               max:1},
+    {id:'r14', nama:"Penutup",                       max:1},
 ];
+
 const LEC_HP6 = [
-    {id:'g1', nama:"Laras Bahasa (HP5) & Kesesuaian Atribut (KMK7)",        max:3},
-    {id:'g2', nama:"Kejelasan Persembahan Idea (HP5) & Aplikasi (KMK7) ",      max:4},
-    {id:'g3', nama:"Organisasi Maklumat (HP5) & Tindakan/Sokongan (KMK7)", max:3},
+    {id:'g1', nama:"Gaya Bahasa & Laras", max:3},
+    {id:'g2', nama:"Kejelasan & Struktur Idea", max:4},
+    {id:'g3', nama:"Kolaborasi & Komunikasi Kumpulan", max:3},
 ];
 
 function renderRubrikInputs(dataObj) {
