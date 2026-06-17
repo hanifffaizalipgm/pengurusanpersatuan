@@ -9,443 +9,103 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ============================================================
-           THEME CERAH — SESUAI UNTUK PENDIDIKAN TINGGI
-           ============================================================ */
         :root {
-            /* Primary colors — lebih cerah dan profesional */
-            --primary: #2563eb;       /* Biru terang */
+            --primary: #2563eb;
             --primary-light: #3b82f6;
             --primary-dark: #1d4ed8;
-            --secondary: #7c3aed;     /* Ungu lembut */
+            --secondary: #7c3aed;
             --secondary-light: #8b5cf6;
-            --accent: #0ea5e9;        /* Cyan terang */
+            --accent: #0ea5e9;
             --success: #22c55e;
             --warning: #eab308;
             --danger: #ef4444;
-
-            /* Background — putih bersih */
             --bg: #f0f4f9;
             --bg-card: #ffffff;
             --bg-surface: #f8fafc;
             --bg-hover: #eef2f6;
-
-            /* Text — gelap untuk kontras tinggi */
             --text-primary: #0f172a;
             --text-secondary: #334155;
             --text-muted: #64748b;
             --text-light: #94a3b8;
-
-            /* Borders */
             --border: #e2e8f0;
-            --border-focus: #2563eb;
-
-            /* Shadows */
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-            --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
-            --shadow-lg: 0 8px 40px rgba(0,0,0,0.08);
-
-            /* Komponen lain */
             --radius: 16px;
             --radius-sm: 10px;
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: var(--bg);
-            min-height: 100vh;
-            color: var(--text-primary);
-        }
-
-        /* Layout */
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); min-height: 100vh; color: var(--text-primary); }
         .shell { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: 1rem; }
-        .glass {
-            background: var(--bg-card);
-            backdrop-filter: none;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-md);
-        }
-        .panel {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-        }
-
-        /* Buttons */
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s;
-            color: white;
-            font-family: inherit;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            border-radius: var(--radius-sm);
-        }
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 14px rgba(37,99,235,0.3);
-        }
-        .btn-primary:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--border);
-            cursor: pointer;
-            transition: all 0.3s;
-            color: var(--text-muted);
-            font-family: inherit;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            border-radius: var(--radius-sm);
-        }
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-            background: rgba(37,99,235,0.05);
-        }
-        .btn-outline-danger {
-            border-color: #fca5a5;
-            color: #dc2626;
-        }
-        .btn-outline-danger:hover {
-            background: rgba(220,38,38,0.08);
-            border-color: #dc2626;
-        }
-
-        /* Tabs */
-        .tab-bar {
-            display: flex;
-            gap: 4px;
-            background: var(--bg-surface);
-            padding: 4px;
-            border-radius: var(--radius-sm);
-            border: 1px solid var(--border);
-        }
-        .tab {
-            flex: 1;
-            padding: 10px 14px;
-            border-radius: 8px;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.06em;
-            cursor: pointer;
-            transition: all 0.25s;
-            background: transparent;
-            border: none;
-            color: var(--text-muted);
-            font-family: inherit;
-        }
-        .tab:hover {
-            color: var(--text-primary);
-            background: rgba(37,99,235,0.06);
-        }
-        .tab.active {
-            background: var(--primary);
-            color: white;
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* Screen visibility */
+        .glass { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+        .panel { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); }
+        .btn-primary { background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border: none; cursor: pointer; transition: all 0.3s; color: white; font-family: inherit; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; border-radius: var(--radius-sm); padding: 12px 20px; }
+        .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,0.3); }
+        .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+        .btn-outline { background: transparent; border: 1px solid var(--border); cursor: pointer; transition: all 0.3s; color: var(--text-muted); font-family: inherit; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; border-radius: var(--radius-sm); padding: 8px 16px; }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); background: rgba(37,99,235,0.05); }
+        .tab-bar { display: flex; gap: 4px; background: var(--bg-surface); padding: 4px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+        .tab { flex: 1; padding: 10px 14px; border-radius: 8px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; cursor: pointer; transition: all 0.25s; background: transparent; border: none; color: var(--text-muted); font-family: inherit; }
+        .tab:hover { color: var(--text-primary); background: rgba(37,99,235,0.06); }
+        .tab.active { background: var(--primary); color: white; box-shadow: var(--shadow-sm); }
         .screen { display: none; }
         .screen.active { display: flex; }
-
-        /* Likert Scale — lebih cerah */
-        .likert-group { display: flex; gap: 6px; }
-        .likert-btn {
-            flex: 1;
-            padding: 10px 4px;
-            border-radius: var(--radius-sm);
-            border: 2px solid var(--border);
-            background: var(--bg-card);
-            cursor: pointer;
-            font-size: 11px;
-            font-weight: 700;
-            color: var(--text-muted);
-            font-family: inherit;
-            transition: all 0.2s;
-            text-align: center;
-        }
-        .likert-btn:hover {
-            border-color: var(--primary);
-            color: var(--text-primary);
-            background: var(--bg-surface);
-        }
-        .likert-btn.sel-1 {
-            background: #fee2e2;
-            border-color: #ef4444;
-            color: #dc2626;
-        }
-        .likert-btn.sel-2 {
-            background: #fef3c7;
-            border-color: #f59e0b;
-            color: #d97706;
-        }
-        .likert-btn.sel-3 {
-            background: #fef9c3;
-            border-color: #eab308;
-            color: #ca8a04;
-        }
-        .likert-btn.sel-4 {
-            background: #dcfce7;
-            border-color: #22c55e;
-            color: #16a34a;
-        }
-        .likert-btn.sel-5 {
-            background: #dbeafe;
-            border-color: #2563eb;
-            color: #1d4ed8;
-        }
-
-        /* Student cards */
-        .s-card {
-            padding: 14px 16px;
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius-sm);
-            margin-bottom: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-            border-left: 3px solid transparent;
-        }
-        .s-card:hover {
-            background: var(--bg-hover);
-            border-left-color: var(--primary);
-            transform: translateX(4px);
-        }
-        .s-card.selected {
-            background: #dbeafe;
-            border-left-color: var(--primary);
-            border-color: var(--primary-light);
-        }
-        .s-card.done {
-            border-left-color: var(--success);
-        }
-
-        /* Progress ring */
-        .prog-ring { position: relative; display: inline-flex; align-items: center; justify-content: center; }
-        .prog-ring svg { transform: rotate(-90deg); }
-        .prog-ring .val { position: absolute; font-size: 11px; font-weight: 800; font-family: 'Space Mono', monospace; }
-
-        /* Score badge */
-        .score-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            font-family: 'Space Mono', monospace;
-        }
-
-        /* Scrollbar */
+        .likert-group { display: flex; gap: 6px; flex-wrap: wrap; }
+        .likert-btn { flex: 1; min-width: 60px; padding: 10px 4px; border-radius: var(--radius-sm); border: 2px solid var(--border); background: var(--bg-card); cursor: pointer; font-size: 11px; font-weight: 700; color: var(--text-muted); font-family: inherit; transition: all 0.2s; text-align: center; }
+        .likert-btn:hover { border-color: var(--primary); color: var(--text-primary); background: var(--bg-surface); }
+        .likert-btn.sel-1 { background: #fee2e2; border-color: #ef4444; color: #dc2626; }
+        .likert-btn.sel-2 { background: #fef3c7; border-color: #f59e0b; color: #d97706; }
+        .likert-btn.sel-3 { background: #fef9c3; border-color: #eab308; color: #ca8a04; }
+        .likert-btn.sel-4 { background: #dcfce7; border-color: #22c55e; color: #16a34a; }
+        .likert-btn.sel-5 { background: #dbeafe; border-color: #2563eb; color: #1d4ed8; }
+        .s-card { padding: 14px 16px; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 8px; cursor: pointer; transition: all 0.2s; border-left: 3px solid transparent; }
+        .s-card:hover { background: var(--bg-hover); border-left-color: var(--primary); transform: translateX(4px); }
+        .s-card.selected { background: #dbeafe; border-left-color: var(--primary); border-color: var(--primary-light); }
+        .s-card.done { border-left-color: var(--success); }
         .scroll-thin::-webkit-scrollbar { width: 4px; }
         .scroll-thin::-webkit-scrollbar-track { background: transparent; }
         .scroll-thin::-webkit-scrollbar-thumb { background: var(--border); border-radius: 10px; }
-        .scroll-thin::-webkit-scrollbar-thumb:hover { background: var(--text-light); }
-
-        /* Spider web label */
-        .spider-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-        .spider-leg-item { display: flex; align-items: center; gap: 6px; font-size: 10px; color: var(--text-muted); }
-        .spider-leg-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-
-        /* Input styled */
-        input[type=number], input[type=text], input[type=password], textarea, select {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            font-family: inherit;
-            outline: none;
-            transition: border-color 0.2s, box-shadow 0.2s;
-            border-radius: var(--radius-sm);
-            padding: 12px 14px;
-            font-size: 14px;
-        }
-        input:focus, textarea:focus, select:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(37,99,235,0.12);
-        }
-        input::placeholder, textarea::placeholder {
-            color: var(--text-light);
-        }
-
-        /* Alert box */
+        input[type=number], input[type=text], input[type=password], textarea, select { background: var(--bg-card); border: 1px solid var(--border); color: var(--text-primary); font-family: inherit; outline: none; transition: border-color 0.2s, box-shadow 0.2s; border-radius: var(--radius-sm); padding: 12px 14px; font-size: 14px; width: 100%; }
+        input:focus, textarea:focus, select:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.12); }
+        input::placeholder, textarea::placeholder { color: var(--text-light); }
         .alert-box { padding: 12px 16px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
-        .alert-info {
-            background: #dbeafe;
-            border: 1px solid #93c5fd;
-            color: #1e40af;
-        }
-        .alert-warn {
-            background: #fef3c7;
-            border: 1px solid #fcd34d;
-            color: #92400e;
-        }
-        .alert-success {
-            background: #dcfce7;
-            border: 1px solid #86efac;
-            color: #166534;
-        }
-        .alert-danger {
-            background: #fee2e2;
-            border: 1px solid #fca5a5;
-            color: #991b1b;
-        }
-
-        /* Rubric chips */
+        .alert-info { background: #dbeafe; border: 1px solid #93c5fd; color: #1e40af; }
+        .alert-warn { background: #fef3c7; border: 1px solid #fcd34d; color: #92400e; }
+        .alert-success { background: #dcfce7; border: 1px solid #86efac; color: #166534; }
+        .alert-danger { background: #fee2e2; border: 1px solid #fca5a5; color: #991b1b; }
         .rubric-chip { display: inline-block; padding: 3px 12px; border-radius: 20px; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
         .chip-a { background: #dbeafe; color: #1d4ed8; }
         .chip-b { background: #dcfce7; color: #16a34a; }
         .chip-c { background: #fef9c3; color: #ca8a04; }
         .chip-d { background: #fef3c7; color: #d97706; }
         .chip-e { background: #fee2e2; color: #dc2626; }
-
-        /* Toast */
         #toast { position: fixed; top: 20px; right: 20px; z-index: 9999; transform: translateX(120%); transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); }
         #toast.show { transform: translateX(0); }
-
-        /* Loading spinner */
         .spinner { width: 20px; height: 20px; border: 2px solid rgba(255,255,255,0.2); border-top-color: white; border-radius: 50%; animation: spin 0.6s linear infinite; display: inline-block; }
         @keyframes spin { to { transform: rotate(360deg); } }
-
-        /* Peer eval status indicator */
         .eval-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
         .eval-dot.done { background: var(--success); }
         .eval-dot.pending { background: var(--border); }
-
-        /* Q block */
-        .q-block {
-            padding: 20px;
-            border-radius: var(--radius-sm);
-            background: var(--bg-surface);
-            border: 1px solid var(--border);
-            margin-bottom: 12px;
-        }
+        .q-block { padding: 20px; border-radius: var(--radius-sm); background: var(--bg-surface); border: 1px solid var(--border); margin-bottom: 12px; }
         .q-block:last-child { margin-bottom: 0; }
-
-        /* Dimension labels */
-        .dim-label {
-            font-size: 9px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            margin-bottom: 4px;
-        }
-
-        /* Disclaimer bar — lebih cerah */
-        .disclaimer-bar {
-            background: var(--bg-surface);
-            border-bottom: 1px solid var(--border);
-            padding: 9px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            font-size: 10.5px;
-            color: var(--text-muted);
-            letter-spacing: 0.02em;
-            text-align: center;
-            flex-wrap: wrap;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+        .dim-label { font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 4px; }
+        .disclaimer-bar { background: var(--bg-surface); border-bottom: 1px solid var(--border); padding: 9px 20px; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 10.5px; color: var(--text-muted); text-align: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
         .disclaimer-bar strong { color: var(--text-secondary); font-weight: 700; }
         .disclaimer-bar .sep { opacity: 0.3; margin: 0 4px; }
-
-        /* Footer disclaimer */
-        .disclaimer-footer {
-            background: var(--bg-card);
-            border-top: 1px solid var(--border);
-            padding: 18px 24px;
-            text-align: center;
-            font-size: 10px;
-            color: var(--text-light);
-            line-height: 1.8;
-        }
-        .disclaimer-footer a { color: var(--primary); text-decoration: none; }
-
+        .disclaimer-footer { background: var(--bg-card); border-top: 1px solid var(--border); padding: 18px 24px; text-align: center; font-size: 10px; color: var(--text-light); line-height: 1.8; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
         .fade-in { animation: fadeIn 0.3s ease forwards; }
-
-        /* Header */
-        .app-header {
-            background: var(--bg-card);
-            border-bottom: 1px solid var(--border);
-            padding: 16px 24px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-        }
-        .app-header .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .app-header .brand .logo {
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 16px;
-        }
-        .app-header .brand .label {
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            color: var(--primary);
-            text-transform: uppercase;
-        }
-        .app-header .brand .name {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-secondary);
-        }
-
-        /* Login screen — lebih cerah */
-        .login-card .institution-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 64px;
-            height: 64px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            margin-bottom: 16px;
-            box-shadow: 0 8px 28px rgba(37,99,235,0.25);
-            color: white;
-            font-size: 28px;
-        }
-
-        /* Mobile responsiveness */
+        .app-header { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; }
+        .app-header .brand { display: flex; align-items: center; gap: 12px; }
+        .app-header .brand .logo { width: 36px; height: 36px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 16px; }
+        .app-header .brand .label { font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: var(--primary); text-transform: uppercase; }
+        .app-header .brand .name { font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+        .login-card .institution-icon { display: inline-flex; align-items: center; justify-content: center; width: 64px; height: 64px; border-radius: 20px; background: linear-gradient(135deg, var(--primary), var(--secondary)); margin-bottom: 16px; box-shadow: 0 8px 28px rgba(37,99,235,0.25); color: white; font-size: 28px; }
+        .grade-badge { display: inline-block; padding: 4px 14px; border-radius: 20px; font-weight: 800; font-size: 14px; }
+        .grade-a { background: #dcfce7; color: #16a34a; }
+        .grade-a- { background: #dbeafe; color: #1d4ed8; }
+        .grade-b { background: #fef9c3; color: #ca8a04; }
+        .grade-c { background: #fef3c7; color: #d97706; }
+        .grade-d { background: #fee2e2; color: #dc2626; }
         @media (max-width: 768px) {
-            .disclaimer-bar {
-                font-size: 9px !important;
-                padding: 8px 12px !important;
-                gap: 6px !important;
-                line-height: 1.6;
-            }
+            .disclaimer-bar { font-size: 9px !important; padding: 8px 12px !important; gap: 6px !important; line-height: 1.6; }
             .disclaimer-bar .sep { display: none; }
             .glass { border-radius: var(--radius-sm) !important; }
             .tab { padding: 8px 4px !important; font-size: 9px !important; letter-spacing: 0.04em !important; border-radius: 6px !important; }
@@ -455,91 +115,30 @@
             #toast { left: 12px; right: 12px; top: 12px; transform: translateY(-120%) !important; }
             #toast.show { transform: translateY(0) !important; }
             .scroll-thin::-webkit-scrollbar { display: none; }
-        }
-
-        @media (max-width: 900px) {
-            #lecturerDash > div:last-child {
-                grid-template-columns: 1fr !important;
-            }
-            #sList {
-                display: flex !important;
-                flex-direction: row !important;
-                overflow-x: auto !important;
-                overflow-y: hidden !important;
-                max-height: none !important;
-                gap: 8px !important;
-                padding-bottom: 8px !important;
-            }
-            #sList .s-card {
-                min-width: 160px !important;
-                flex-shrink: 0 !important;
-                margin-bottom: 0 !important;
-            }
-        }
-
-        @media (max-width: 768px) {
-            #stab-profile > div {
-                flex-direction: column !important;
-            }
-            #stab-peer > div:last-child {
-                grid-template-columns: 1fr !important;
-                gap: 12px !important;
-            }
-            #peerList {
-                display: flex !important;
-                flex-direction: row !important;
-                overflow-x: auto !important;
-                overflow-y: hidden !important;
-                max-height: none !important;
-                gap: 8px !important;
-                padding-bottom: 8px !important;
-            }
-            #peerList .s-card {
-                min-width: 140px !important;
-                flex-shrink: 0 !important;
-                margin-bottom: 0 !important;
-            }
+            #lecturerDash > div:last-child { grid-template-columns: 1fr !important; }
+            #sList { display: flex !important; flex-direction: row !important; overflow-x: auto !important; overflow-y: hidden !important; max-height: none !important; gap: 8px !important; padding-bottom: 8px !important; }
+            #sList .s-card { min-width: 160px !important; flex-shrink: 0 !important; margin-bottom: 0 !important; }
+            #stab-profile > div { flex-direction: column !important; }
+            #stab-peer > div:last-child { grid-template-columns: 1fr !important; gap: 12px !important; }
+            #peerList { display: flex !important; flex-direction: row !important; overflow-x: auto !important; overflow-y: hidden !important; max-height: none !important; gap: 8px !important; padding-bottom: 8px !important; }
+            #peerList .s-card { min-width: 140px !important; flex-shrink: 0 !important; margin-bottom: 0 !important; }
             #h1, #h5, #h8, #h10 { font-size: 16px !important; padding: 10px !important; }
             #tm { font-size: 36px !important; }
             #gd { font-size: 42px !important; }
             #radarChart { max-width: 260px !important; }
         }
-
         @media (max-width: 600px) {
             .app-header { padding: 10px 14px !important; }
             .app-header .brand .label { font-size: 9px !important; }
             .app-header .brand .name { font-size: 11px !important; }
             .app-header .brand .logo { width: 28px !important; height: 28px !important; font-size: 12px !important; }
         }
-
         @media (max-width: 480px) {
             .shell { align-items: flex-start !important; padding: 0 !important; }
-            .shell > .glass {
-                border-radius: 0 !important;
-                min-height: 100vh !important;
-                border: none !important;
-                box-shadow: none !important;
-                justify-content: center !important;
-                display: flex !important;
-                flex-direction: column !important;
-            }
+            .shell > .glass { border-radius: 0 !important; min-height: 100vh !important; border: none !important; box-shadow: none !important; justify-content: center !important; display: flex !important; flex-direction: column !important; }
         }
-
-        @media (max-width: 768px) {
-            #stab-rubrik table,
-            #rubrikLecPanel table { font-size: 11px !important; }
-            #stab-rubrik .glass,
-            #rubrikLecPanel .glass { overflow-x: auto; }
-        }
-
-        @media (max-width: 600px) {
-            .disclaimer-footer { font-size: 9px !important; padding: 12px !important; line-height: 1.7 !important; }
-        }
-
         @media (hover: none) and (pointer: coarse) {
-            .btn-primary, .btn-outline, .tab, .s-card, .likert-btn {
-                min-height: 44px;
-            }
+            .btn-primary, .btn-outline, .tab, .s-card, .likert-btn { min-height: 44px; }
             .tab { min-height: 36px; }
             .likert-btn { min-height: 52px; }
         }
@@ -583,7 +182,6 @@
 <div class="shell" id="loginScreen">
     <div class="glass w-full shadow-lg" style="max-width:420px; padding: clamp(1.4rem, 5vw, 2.5rem);">
 
-        <!-- Institution Header -->
         <div class="text-center" style="margin-bottom:20px;">
             <div class="institution-icon">
                 <i class="fas fa-graduation-cap"></i>
@@ -599,7 +197,6 @@
             </p>
         </div>
 
-        <!-- PENAFIAN / DISCLAIMER -->
         <div style="background:#f0f7ff; border:1px solid #b9d4ff; border-radius:var(--radius-sm); padding:14px 16px; margin-bottom:20px;">
             <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
                 <i class="fas fa-shield-halved" style="color:var(--primary); font-size:13px; flex-shrink:0;"></i>
@@ -617,7 +214,6 @@
             </p>
         </div>
 
-        <!-- Login Type Toggle -->
         <div class="tab-bar" style="margin-bottom:16px;">
             <button class="tab active" id="ts" onclick="setType('student')">
                 <i class="fas fa-user-graduate" style="margin-right:4px;"></i> PELAJAR
@@ -627,7 +223,6 @@
             </button>
         </div>
 
-        <!-- Input Fields -->
         <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
             <input type="text" id="idIn"
                 placeholder="No. Kad Pengenalan / Emel"
@@ -635,20 +230,18 @@
                 style="padding:14px 16px; font-family:'Space Mono',monospace; font-size:13px; text-align:center;"
                 autocomplete="username" inputmode="text">
             <input type="password" id="pwIn"
-                placeholder="Password"
+                placeholder="Password (Pensyarah sahaja)"
                 class="w-full hidden"
                 style="padding:14px 16px; text-align:center; font-size:14px;"
                 autocomplete="current-password">
         </div>
 
-        <!-- Login Button -->
         <button onclick="handleAuth()" id="loginBtn"
                 class="btn-primary w-full"
                 style="padding:15px; font-size:13px; letter-spacing:0.08em;">
             <i class="fas fa-right-to-bracket" style="margin-right:8px;"></i> MASUK SISTEM
         </button>
 
-        <!-- Footer -->
         <div style="margin-top:20px; padding-top:14px; border-top:1px solid var(--border); text-align:center;">
             <p style="font-size:9px; color:var(--text-light); line-height:1.9;">
                 © 2025–2026 Unit Kokurikulum IPG Kampus Darulaman<br>
@@ -665,7 +258,6 @@
 <!-- STUDENT DASHBOARD -->
 <!-- ============================================================ -->
 <div id="studentDash" style="display:none; min-height:100vh; flex-direction:column;">
-    <!-- Header -->
     <div class="app-header">
         <div class="brand">
             <div class="logo"><i class="fas fa-graduation-cap"></i></div>
@@ -677,7 +269,6 @@
         <button onclick="logout()" class="btn-outline px-4 py-2" style="border-radius:20px;">LOGOUT</button>
     </div>
 
-    <!-- Student Tab Navigation -->
     <div style="padding:20px 24px 0;">
         <div class="tab-bar" style="max-width:500px;">
             <button class="tab active" onclick="showStudentTab('profile')"><i class="fas fa-user me-1"></i> Profil</button>
@@ -687,7 +278,7 @@
         </div>
     </div>
 
-    <!-- ---- TAB: PROFIL ---- -->
+    <!-- TAB: PROFIL -->
     <div id="stab-profile" style="padding:20px 24px; flex:1; display:flex; flex-wrap:wrap; gap:20px;">
         <div class="glass" style="flex:1; min-width:280px; padding:28px;">
             <div style="font-size:9px; font-weight:800; letter-spacing:0.15em; color:var(--primary); text-transform:uppercase; margin-bottom:20px; border-bottom:1px solid var(--border); padding-bottom:12px;">PROFIL DIGITAL</div>
@@ -732,27 +323,25 @@
         </div>
     </div>
 
-    <!-- ---- TAB: PEER EVALUATION ---- -->
+    <!-- TAB: PEER EVALUATION -->
     <div id="stab-peer" style="padding:20px 24px; flex:1; display:none;">
-        <!-- Info banner -->
         <div class="alert-info mb-5" style="border-radius:var(--radius-sm); padding:14px 18px;">
             <i class="fas fa-info-circle"></i>
             <span>Anda perlu menilai <strong>semua ahli kelas</strong> anda. Penilaian adalah sulit dan hanya pensyarah yang akan melihat keputusan agregat.</span>
         </div>
 
-        <!-- Rubrik ringkas -->
         <div class="panel p-4 mb-5" style="background:var(--bg-card);">
             <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;">
-                <i class="fas fa-book-open me-1" style="color:var(--secondary);"></i> Rubrik HP8 — Penganjuran & Kepimpinan (30%)
+                <i class="fas fa-book-open me-1" style="color:var(--secondary);"></i> Rubrik HP8 — Penganjuran &amp; Kepimpinan (30%)
             </div>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
                 <div style="flex:1; min-width:120px; padding:10px; border-radius:var(--radius-sm); background:#dbeafe; border:1px solid #93c5fd;">
                     <span class="rubric-chip chip-a">5 — Cemerlang</span>
-                    <p style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Menganjurkan dengan amat baik; kepimpinan, autonomi & tanggungjawab sosial amat ketara</p>
+                    <p style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Menganjurkan dengan amat baik; kepimpinan, autonomi &amp; tanggungjawab sosial amat ketara</p>
                 </div>
                 <div style="flex:1; min-width:120px; padding:10px; border-radius:var(--radius-sm); background:#dcfce7; border:1px solid #86efac;">
                     <span class="rubric-chip chip-b">4 — Baik</span>
-                    <p style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Menganjurkan dengan baik; elemen kepimpinan & tanggungjawab jelas</p>
+                    <p style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Menganjurkan dengan baik; elemen kepimpinan &amp; tanggungjawab jelas</p>
                 </div>
                 <div style="flex:1; min-width:120px; padding:10px; border-radius:var(--radius-sm); background:#fef9c3; border:1px solid #fde047;">
                     <span class="rubric-chip chip-c">3 — Memuaskan</span>
@@ -760,7 +349,7 @@
                 </div>
                 <div style="flex:1; min-width:120px; padding:10px; border-radius:var(--radius-sm); background:#fef3c7; border:1px solid #fcd34d;">
                     <span class="rubric-chip chip-d">2 — Lemah</span>
-                    <p style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Lemah; kurang elemen kepimpinan & tanggungjawab</p>
+                    <p style="font-size:10px; color:var(--text-secondary); margin-top:6px; line-height:1.5;">Lemah; kurang elemen kepimpinan &amp; tanggungjawab</p>
                 </div>
                 <div style="flex:1; min-width:120px; padding:10px; border-radius:var(--radius-sm); background:#fee2e2; border:1px solid #fca5a5;">
                     <span class="rubric-chip chip-e">1 — Sangat Lemah</span>
@@ -770,7 +359,6 @@
         </div>
 
         <div style="display:grid; grid-template-columns:280px 1fr; gap:20px;">
-            <!-- Senarai rakan untuk dinilai -->
             <div>
                 <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;">
                     Senarai Rakan
@@ -783,7 +371,6 @@
                 </div>
             </div>
 
-            <!-- Panel soalan penilaian -->
             <div id="peerPanel" style="display:none;" class="fade-in">
                 <div class="glass p-6">
                     <div style="display:flex; align-items:center; gap:12px; margin-bottom:20px; padding-bottom:16px; border-bottom:1px solid var(--border);">
@@ -802,9 +389,7 @@
                         </div>
                     </div>
 
-                    <!-- SOALAN PENILAIAN LIKERT (5 dimensi HP8) -->
                     <div id="peerQuestions">
-                        <!-- Q1: Kepimpinan -->
                         <div class="q-block">
                             <div class="dim-label"><i class="fas fa-crown me-1" style="color:var(--warning);"></i>Dimensi 1 — Kepimpinan</div>
                             <p style="font-size:13px; font-weight:600; margin-bottom:12px; line-height:1.5; color:var(--text-secondary);">Rakan ini menunjukkan kepimpinan yang jelas dalam menyelaraskan tugasan pasukan semasa aktiviti persatuan.</p>
@@ -816,10 +401,8 @@
                                 <button class="likert-btn" onclick="setLikert('q1',5,this)">5<br><span style="font-size:9px;">Cemerlang</span></button>
                             </div>
                         </div>
-
-                        <!-- Q2: Autonomi -->
                         <div class="q-block">
-                            <div class="dim-label"><i class="fas fa-bolt me-1" style="color:var(--accent);"></i>Dimensi 2 — Autonomi & Inisiatif</div>
+                            <div class="dim-label"><i class="fas fa-bolt me-1" style="color:var(--accent);"></i>Dimensi 2 — Autonomi &amp; Inisiatif</div>
                             <p style="font-size:13px; font-weight:600; margin-bottom:12px; line-height:1.5; color:var(--text-secondary);">Rakan ini bertindak secara proaktif dan mengambil inisiatif sendiri tanpa perlu diarahkan sepanjang aktiviti.</p>
                             <div class="likert-group" id="q2">
                                 <button class="likert-btn" onclick="setLikert('q2',1,this)">1<br><span style="font-size:9px;">Sangat<br>Lemah</span></button>
@@ -829,8 +412,6 @@
                                 <button class="likert-btn" onclick="setLikert('q2',5,this)">5<br><span style="font-size:9px;">Cemerlang</span></button>
                             </div>
                         </div>
-
-                        <!-- Q3: Tanggungjawab -->
                         <div class="q-block">
                             <div class="dim-label"><i class="fas fa-shield-halved me-1" style="color:var(--success);"></i>Dimensi 3 — Tanggungjawab Sosial</div>
                             <p style="font-size:13px; font-weight:600; margin-bottom:12px; line-height:1.5; color:var(--text-secondary);">Rakan ini menjalankan tanggungjawabnya dengan penuh akauntabiliti dan bertanggungjawab terhadap tugas yang diamanahkan.</p>
@@ -842,10 +423,8 @@
                                 <button class="likert-btn" onclick="setLikert('q3',5,this)">5<br><span style="font-size:9px;">Cemerlang</span></button>
                             </div>
                         </div>
-
-                        <!-- Q4: Penganjuran Aktiviti -->
                         <div class="q-block">
-                            <div class="dim-label"><i class="fas fa-calendar-check me-1" style="color:var(--secondary);"></i>Dimensi 4 — Penganjuran & Organisasi</div>
+                            <div class="dim-label"><i class="fas fa-calendar-check me-1" style="color:var(--secondary);"></i>Dimensi 4 — Penganjuran &amp; Organisasi</div>
                             <p style="font-size:13px; font-weight:600; margin-bottom:12px; line-height:1.5; color:var(--text-secondary);">Rakan ini membantu merancang dan menganjurkan aktiviti persatuan dengan tersusun dan sistematik.</p>
                             <div class="likert-group" id="q4">
                                 <button class="likert-btn" onclick="setLikert('q4',1,this)">1<br><span style="font-size:9px;">Sangat<br>Lemah</span></button>
@@ -855,8 +434,6 @@
                                 <button class="likert-btn" onclick="setLikert('q4',5,this)">5<br><span style="font-size:9px;">Cemerlang</span></button>
                             </div>
                         </div>
-
-                        <!-- Q5: Kerjasama Pasukan -->
                         <div class="q-block">
                             <div class="dim-label"><i class="fas fa-handshake me-1" style="color:var(--danger);"></i>Dimensi 5 — Kerjasama Pasukan</div>
                             <p style="font-size:13px; font-weight:600; margin-bottom:12px; line-height:1.5; color:var(--text-secondary);">Rakan ini bekerjasama dengan baik bersama ahli pasukan dan menyumbang secara aktif kepada kejayaan kumpulan.</p>
@@ -868,8 +445,6 @@
                                 <button class="likert-btn" onclick="setLikert('q5',5,this)">5<br><span style="font-size:9px;">Cemerlang</span></button>
                             </div>
                         </div>
-
-                        <!-- Catatan -->
                         <div class="q-block">
                             <div class="dim-label"><i class="fas fa-comment-dots me-1"></i>Catatan Tambahan (Pilihan)</div>
                             <textarea id="peerNote" rows="2" placeholder="Catatan ringkas tentang prestasi rakan ini..." style="width:100%; padding:12px; font-size:13px; resize:none;"></textarea>
@@ -882,7 +457,6 @@
                 </div>
             </div>
 
-            <!-- Placeholder bila tiada rakan dipilih -->
             <div id="peerPanelEmpty" style="display:flex; align-items:center; justify-content:center;">
                 <div style="text-align:center; color:var(--text-light);">
                     <i class="fas fa-users" style="font-size:3rem; margin-bottom:12px; opacity:0.3;"></i>
@@ -892,7 +466,7 @@
         </div>
     </div>
 
-    <!-- ---- TAB: RUBRIK HP1 & HP5 ---- -->
+    <!-- TAB: RUBRIK -->
     <div id="stab-rubrik" style="padding:20px 24px; flex:1; display:none; flex-direction:column; gap:16px;">
         <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
             <div>
@@ -904,7 +478,6 @@
             </div>
         </div>
 
-        <!-- HP5 Rubrik -->
         <div class="glass p-5">
             <div style="font-size:10px; font-weight:800; color:var(--secondary); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
                 <i class="fas fa-file-alt"></i> HP1 — Kertas Cadangan (Max: 30 markah)
@@ -934,10 +507,9 @@
             </div>
         </div>
 
-        <!-- HP6 Rubrik -->
         <div class="glass p-5">
             <div style="font-size:10px; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; margin-bottom:16px; display:flex; align-items:center; gap:8px;">
-                <i class="fas fa-pen-nib"></i> HP5 — Kejelasan dan Persembahan Idea &amp; Penggunaan Bahasa dan Laras Bahasa (Max: 10 markah)
+                <i class="fas fa-pen-nib"></i> HP5 — Gaya Penulisan &amp; Komunikasi (Max: 10 markah)
             </div>
             <div style="overflow-x:auto;">
                 <table style="width:100%; border-collapse:collapse; font-size:12px;">
@@ -966,9 +538,8 @@
         <p style="font-size:10px; color:var(--text-light); text-align:center; padding-bottom:10px;"><i class="fas fa-lock me-1"></i> Penilaian ini dilakukan oleh pensyarah. Paparan ini adalah untuk rujukan pelajar sahaja.</p>
     </div>
 
-    <!-- ---- TAB: KEPUTUSAN ---- -->
+    <!-- TAB: KEPUTUSAN -->
     <div id="stab-result" style="padding:20px 24px; flex:1; display:none;">
-        <!-- Mesej kerahsiaan markah -->
         <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:400px; gap:24px; max-width:480px; margin:0 auto; text-align:center;">
             <div style="width:80px; height:80px; border-radius:50%; background:#dbeafe; border:2px solid #93c5fd; display:flex; align-items:center; justify-content:center;">
                 <i class="fas fa-lock" style="font-size:2rem; color:var(--primary);"></i>
@@ -980,7 +551,6 @@
                     Sila rujuk pensyarah secara langsung untuk mengetahui markah anda setelah proses pemarkahan selesai.
                 </p>
             </div>
-            <!-- Status peer eval sahaja yang boleh ditunjuk -->
             <div id="myPeerStatusBox" style="width:100%; padding:20px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm);">
                 <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px; text-align:left;">
                     <i class="fas fa-chart-radar me-1"></i> Status Peer Evaluation Anda
@@ -999,7 +569,6 @@
 <!-- LECTURER DASHBOARD -->
 <!-- ============================================================ -->
 <div id="lecturerDash" style="display:none; min-height:100vh; flex-direction:column;">
-    <!-- Header -->
     <div class="app-header">
         <div class="brand">
             <div class="logo" style="background:linear-gradient(135deg, var(--secondary), var(--primary));"><i class="fas fa-chalkboard-teacher"></i></div>
@@ -1011,18 +580,16 @@
         <button onclick="logout()" class="btn-outline px-4 py-2" style="border-radius:20px;">LOGOUT</button>
     </div>
 
-    <!-- Lecturer Tab Navigation -->
     <div style="padding:20px 24px 0;">
         <div class="tab-bar" style="max-width:600px;">
             <button class="tab active" onclick="showLecTab('marking')"><i class="fas fa-pen-to-square me-1"></i> Pemarkahan</button>
             <button class="tab" onclick="showLecTab('peer')"><i class="fas fa-spider me-1"></i> Peer Radar</button>
-            <button class="tab" onclick="showLecTab('rubrik')"><i class="fas fa-list-check me-1"></i> Rubrik HP1&HP5</button>
+            <button class="tab" onclick="showLecTab('rubrik')"><i class="fas fa-list-check me-1"></i> Rubrik HP1&amp;HP5</button>
             <button class="tab" onclick="showLecTab('summary')"><i class="fas fa-table me-1"></i> Ringkasan</button>
         </div>
     </div>
 
     <div style="padding:20px 24px; display:grid; grid-template-columns:300px 1fr; gap:20px; flex:1;">
-        <!-- Student List (shared across tabs) -->
         <div>
             <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
                 <span>SENARAI PELAJAR</span>
@@ -1035,12 +602,10 @@
             </div>
         </div>
 
-        <!-- Main Content Area -->
         <div>
             <!-- TAB: PEMARKAHAN -->
             <div id="ltab-marking">
                 <div id="gradingPanel" style="display:none;" class="glass p-6 fade-in">
-                    <!-- Student Info Bar -->
                     <div style="display:flex; align-items:center; gap:16px; padding:16px; background:var(--bg-surface); border-radius:var(--radius-sm); margin-bottom:20px; border:1px solid var(--border);">
                         <div id="liContainer" style="width:56px; height:72px; border-radius:var(--radius-sm); overflow:hidden; background:var(--bg-surface); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
                             <img id="li" style="width:100%; height:100%; object-fit:cover; display:none;" alt="">
@@ -1050,7 +615,6 @@
                             <div id="ln" style="font-size:18px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">--</div>
                             <div id="lk" style="font-size:10px; font-family:'Space Mono',monospace; color:var(--text-muted);">--</div>
                         </div>
-                        <!-- Peer Score Summary -->
                         <div id="peerScoreBadge" style="text-align:right; display:none;">
                             <div style="font-size:9px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">Skor Peer (avg)</div>
                             <div id="peerAvgDisp" style="font-size:22px; font-weight:800; font-family:'Space Mono',monospace; color:var(--accent);">--</div>
@@ -1058,7 +622,6 @@
                         </div>
                     </div>
 
-                    <!-- Peer Radar Mini (inline) -->
                     <div id="miniRadarBox" style="display:none; margin-bottom:20px; padding:16px; background:#f0f9ff; border:1px solid #bae6fd; border-radius:var(--radius-sm);">
                         <div style="font-size:10px; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:10px;">
                             <i class="fas fa-chart-radar me-1"></i> Profil Peer Evaluation — <span id="miniRadarName"></span>
@@ -1069,39 +632,36 @@
                         </div>
                     </div>
 
-                    <!-- Score Limit Warning -->
                     <div id="limitWarn" class="alert-warn mb-4" style="display:none; border-radius:var(--radius-sm);">
                         <i class="fas fa-exclamation-triangle"></i>
-                        <span>Markah HP8 tidak boleh melebihi <strong id="maxAllowed">30</strong>. Had ditetapkan berdasarkan peruntukannya.</span>
+                        <span>Markah melebihi had maksimum! Sila semak semula.</span>
                     </div>
 
-                    <!-- Marking Inputs -->
                     <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
                         <div style="padding:20px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border);">
                             <div style="font-size:10px; font-weight:800; color:var(--primary); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; border-bottom:1px solid var(--border); padding-bottom:10px;">HPK1 (40%)</div>
                             <div style="margin-bottom:10px;">
-                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP1 — Max 30</label>
+                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP1 — Kertas Cadangan (Max 30)</label>
                                 <input type="number" id="h1" placeholder="0–30" oninput="calc(); checkLimits();" min="0" max="30" class="w-full">
                             </div>
                             <div>
-                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP5 — Max 10</label>
+                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP5 — Gaya Penulisan (Max 10)</label>
                                 <input type="number" id="h5" placeholder="0–10" oninput="calc(); checkLimits();" min="0" max="10" class="w-full">
                             </div>
                         </div>
                         <div style="padding:20px; background:var(--bg-surface); border-radius:var(--radius-sm); border:1px solid var(--border);">
                             <div style="font-size:10px; font-weight:800; color:var(--secondary); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px; border-bottom:1px solid var(--border); padding-bottom:10px;">HPK2 (60%)</div>
                             <div style="margin-bottom:10px;">
-                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP8 — Max 30 (Peer Eval)</label>
+                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP8 — Penganjuran &amp; Kepimpinan (Max 30)</label>
                                 <input type="number" id="h8" placeholder="0–30" oninput="calc(); checkLimits();" min="0" max="30" class="w-full" style="border-color:#bae6fd;">
                             </div>
                             <div>
-                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP10 — Max 30</label>
+                                <label style="font-size:10px; color:var(--text-muted); display:block; margin-bottom:6px;">HP10 — Pelaksanaan Aktiviti (Max 30)</label>
                                 <input type="number" id="h10" placeholder="0–30" oninput="calc(); checkLimits();" min="0" max="30" class="w-full">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Total Display -->
                     <div style="display:flex; justify-content:space-between; align-items:center; background:#dbeafe; padding:20px 24px; border-radius:var(--radius-sm); border:1px solid #93c5fd; margin-bottom:16px;">
                         <div>
                             <div style="font-size:10px; color:var(--primary-dark); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:4px;">Jumlah Markah</div>
@@ -1113,7 +673,6 @@
                         </div>
                     </div>
 
-                    <!-- Justification for A+ -->
                     <div id="justArea" style="display:none; margin-bottom:16px;">
                         <div class="alert-warn mb-3" style="border-radius:var(--radius-sm);">
                             <i class="fas fa-exclamation-circle"></i>
@@ -1127,7 +686,6 @@
                     </button>
                 </div>
 
-                <!-- Empty state -->
                 <div id="gradingEmpty" style="display:flex; align-items:center; justify-content:center; height:400px; color:var(--text-light);">
                     <div style="text-align:center;">
                         <i class="fas fa-hand-pointer" style="font-size:3rem; margin-bottom:12px; opacity:0.3;"></i>
@@ -1136,7 +694,7 @@
                 </div>
             </div>
 
-            <!-- TAB: PEER RADAR (Spider Web) -->
+            <!-- TAB: PEER RADAR -->
             <div id="ltab-peer" style="display:none;">
                 <div id="radarPanel">
                     <div id="radarEmpty" style="display:flex; align-items:center; justify-content:center; height:400px; color:var(--text-light);">
@@ -1152,7 +710,6 @@
                         <div id="radarStudentName" style="font-size:20px; font-weight:700; color:var(--text-primary); margin-bottom:4px;">--</div>
                         <div id="radarMeta" style="font-size:11px; color:var(--text-muted); margin-bottom:20px;">--</div>
 
-                        <!-- Radar Chart -->
                         <div style="display:flex; gap:24px; flex-wrap:wrap; align-items:center;">
                             <div style="position:relative; width:300px; height:300px; flex-shrink:0; margin:0 auto;">
                                 <canvas id="radarChart"></canvas>
@@ -1166,7 +723,6 @@
                                     <div id="radarInterpret" style="font-size:13px; color:var(--text-secondary); line-height:1.7;"></div>
                                 </div>
 
-                                <!-- Suggested mark range -->
                                 <div id="suggestBox" style="margin-top:12px; padding:16px; background:#f0f9ff; border:1px solid #bae6fd; border-radius:var(--radius-sm);">
                                     <div style="font-size:10px; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:6px; font-weight:700;">Cadangan Julat Markah HP8</div>
                                     <div id="suggestRange" style="font-size:20px; font-weight:800; font-family:'Space Mono',monospace; color:var(--text-primary);">--</div>
@@ -1175,7 +731,6 @@
                             </div>
                         </div>
 
-                        <!-- Individual evaluations breakdown -->
                         <div style="margin-top:24px;">
                             <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px;">PECAHAN PENILAIAN RAKAN (Tanpa Nama)</div>
                             <div id="evalBreakdown" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(160px,1fr)); gap:10px;"></div>
@@ -1184,7 +739,7 @@
                 </div>
             </div>
 
-            <!-- TAB: RUBRIK HP1/HP5 (LECTURER INPUT) -->
+            <!-- TAB: RUBRIK HP1/HP5 -->
             <div id="ltab-rubrik" style="display:none;">
                 <div id="rubrikLecEmpty" style="display:flex; align-items:center; justify-content:center; height:400px; color:var(--text-light);">
                     <div style="text-align:center;">
@@ -1205,7 +760,6 @@
                             </div>
                         </div>
 
-                        <!-- HP1 Scoring -->
                         <div style="margin-bottom:20px;">
                             <div style="font-size:10px; font-weight:800; color:var(--secondary); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid #e9d5ff;">
                                 <i class="fas fa-file-alt me-1"></i> HP1 — Kertas Cadangan (Jumlah: 30 markah)
@@ -1215,11 +769,9 @@
                                 <span style="font-size:11px; color:var(--text-muted);">Jumlah Rubrik HP1:</span>
                                 <span id="lec_hp5Total" style="font-size:22px; font-weight:800; font-family:'Space Mono',monospace; color:var(--secondary);">0</span>
                                 <span style="font-size:11px; color:var(--text-light);">/ 30</span>
-                                <span id="lec_hp5Scaled" style="font-size:11px; font-weight:700; color:var(--secondary); background:#f3e8ff; padding:3px 10px; border-radius:20px; border:1px solid #d8b4fe;">→ 0/10 markah</span>
                             </div>
                         </div>
 
-                        <!-- HP5 Scoring -->
                         <div style="margin-bottom:20px;">
                             <div style="font-size:10px; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid #bae6fd;">
                                 <i class="fas fa-pen-nib me-1"></i> HP5 — Kemahiran Komunikasi (Jumlah: 10 markah)
@@ -1248,7 +800,7 @@
             <div id="ltab-summary" style="display:none;">
                 <div class="glass p-6">
                     <div style="font-size:10px; font-weight:800; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px;">
-                        <i class="fas fa-table me-1"></i> RINGKASAN MARKAH & PEER EVALUATION
+                        <i class="fas fa-table me-1"></i> RINGKASAN MARKAH &amp; PEER EVALUATION
                     </div>
                     <div style="overflow-x:auto;">
                         <table style="width:100%; border-collapse:collapse; font-size:12px;" id="summaryTable">
@@ -1261,8 +813,7 @@
                                     <th style="padding:10px 12px; text-align:center; color:var(--text-muted); font-weight:700; font-size:9px; text-transform:uppercase; letter-spacing:0.1em;">HP10</th>
                                     <th style="padding:10px 12px; text-align:center; color:var(--text-muted); font-weight:700; font-size:9px; text-transform:uppercase; letter-spacing:0.1em;">Jumlah</th>
                                     <th style="padding:10px 12px; text-align:center; color:var(--text-muted); font-weight:700; font-size:9px; text-transform:uppercase; letter-spacing:0.1em;">Gred</th>
-                                    <th style="padding:10px 12px; text-align:center; color:var(--text-muted); font-weight:700; font-size:9px; text-transform:uppercase; letter-spacing:0.1em;">Peer Avg</th>
-                                    <th style="padding:10px 12px; text-align:center; color:var(--text-muted); font-weight:700; font-size:9px; text-transform:uppercase; letter-spacing:0.1em;">Penilai</th>
+                                    <th style="padding:10px 12px; text-align:center; color:var(--text-muted); font-weight:700; font-size:9px; text-transform:uppercase; letter-spacing:0.1em;">Peer Count</th>
                                 </tr>
                             </thead>
                             <tbody id="summaryBody"></tbody>
@@ -1273,1186 +824,3 @@
         </div>
     </div>
 </div>
-
-<!-- ============================================================ -->
-<!-- JAVASCRIPT -->
-<!-- ============================================================ -->
-<script>
-// Sila tukar API URL di bawah kepada URL webapp baharu anda
-const API = "https://script.google.com/macros/s/AKfycbxufZgAB9OWBbVzGzBascudDu498uJB80q9PtWDAFWLzDCZD5MxYqGKvIRyC38JgkId1Q/exec";
-let mode = 'student';
-let sData = [], curS = null, curUser = null, curLecEmail = null;
-let peerScores = {}; // { noKP: { q1,q2,q3,q4,q5, done:true } }
-let peerTarget = null; // rakan yang sedang dinilai
-let radarChart = null, miniRadarChart = null;
-
-const DIMS = ['Kepimpinan','Autonomi','Tanggungjawab','Penganjuran','Kerjasama'];
-const DIM_COLORS = ['#2563eb','#0ea5e9','#22c55e','#7c3aed','#ef4444'];
-
-// ---- HELPER ----
-function fixDriveUrl(url) {
-    if (!url || url === "") return "";
-    let fileId = "";
-    const m1 = url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-    if (m1) fileId = m1[1];
-    if (!fileId) { const m2 = url.match(/[?&]id=([a-zA-Z0-9_-]+)/); if (m2) fileId = m2[1]; }
-    if (!fileId) return url;
-    return `https://drive.google.com/thumbnail?id=${fileId}&sz=w800`;
-}
-
-function loadImage(imgEl, phEl, url) {
-    if (!url || url === "") { imgEl.style.display='none'; phEl.style.display='flex'; return; }
-    const fixed = fixDriveUrl(url);
-    imgEl.onload = () => { imgEl.style.display='block'; phEl.style.display='none'; };
-    imgEl.onerror = () => {
-        const fid = fixed.match(/id=([a-zA-Z0-9_-]+)/)?.[1];
-        if (fid && !imgEl.dataset.retried) {
-            imgEl.dataset.retried = "1";
-            imgEl.src = `https://lh3.googleusercontent.com/d/${fid}`;
-        } else { imgEl.style.display='none'; phEl.style.display='flex'; }
-    };
-    imgEl.src = fixed;
-}
-
-function showToast(msg, type='success') {
-    const t = document.getElementById('toast');
-    const m = document.getElementById('toastMsg');
-    const icon = type==='success' ? 'fa-check-circle' : type==='warn' ? 'fa-exclamation-triangle' : 'fa-times-circle';
-    const col = type==='success' ? '#22c55e' : type==='warn' ? '#eab308' : '#ef4444';
-    m.innerHTML = `<i class="fas ${icon}" style="color:${col}"></i><span>${msg}</span>`;
-    t.classList.add('show');
-    setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-function calculateGred(m) {
-    if (m >= 90) return "A+"; if (m >= 80) return "A"; if (m >= 75) return "A-";
-    if (m >= 70) return "B+"; if (m >= 65) return "B"; if (m >= 60) return "B-";
-    if (m >= 55) return "C+"; if (m >= 50) return "C"; if (m >= 40) return "C-";
-    if (m >= 30) return "D+"; if (m >= 20) return "D"; return "F";
-}
-
-function normalizeKP(kp) {
-    if (!kp) return "";
-    return kp.toString().trim().replace(/^0+/, '') || "0";
-}
-
-// ---- AUTH ----
-function setType(t) {
-    mode = t;
-    document.getElementById('ts').classList.toggle('active', t === 'student');
-    document.getElementById('tl').classList.toggle('active', t === 'lecturer');
-    document.getElementById('pwIn').classList.toggle('hidden', t === 'student');
-}
-
-async function handleAuth() {
-    const id = document.getElementById('idIn').value.trim();
-    const pw = document.getElementById('pwIn').value;
-    if (!id) return showToast('Sila masukkan maklumat!', 'err');
-    const btn = document.getElementById('loginBtn');
-    btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> VERIFYING...';
-    try {
-        if (mode === 'student') {
-            const r = await fetch(`${API}?action=checkLogin&noKP=${encodeURIComponent(id)}`);
-            const o = await r.json();
-            if (o.status === "success") {
-                curUser = o.data;
-                localStorage.setItem('userMPU', JSON.stringify(o.data));
-                renderStudent(o.data);
-            } else { showToast(o.message, 'err'); }
-        } else {
-            const r = await fetch(`${API}?action=lecturerLogin&email=${encodeURIComponent(id)}&pass=${encodeURIComponent(pw)}`);
-            const o = await r.json();
-            if (o.status === "success") {
-                curLecEmail = id;
-                localStorage.setItem('le', id);
-                localStorage.setItem('leName', o.name || id);
-                initLecturer(id, o.name);
-            } else { showToast(o.message || 'Login gagal', 'err'); }
-        }
-    } catch (e) { showToast('Ralat sambungan API', 'err'); }
-    btn.disabled = false; btn.innerHTML = 'MASUK SISTEM';
-}
-
-// ---- STUDENT ----
-function renderStudent(d) {
-    curUser = d;
-    document.getElementById('loginScreen').style.display = 'none';
-    document.getElementById('studentDash').style.display = 'flex';
-    document.getElementById('studentDash').style.flexDirection = 'column';
-    document.getElementById('hdrName').textContent = d.Nama_Pelajar || '--';
-    document.getElementById('sN').textContent = d.Nama_Pelajar || '--';
-    document.getElementById('sK').textContent = d.No_KP || '--';
-    document.getElementById('sC').textContent = d.Kelas || '--';
-    if (d.Status_Upload === "Selesai") {
-        document.getElementById('sS').textContent = "✓ SELESAI";
-        document.getElementById('sS').style.color = '#22c55e';
-    }
-    loadImage(document.getElementById('sImg'), document.getElementById('sPl'), d.Link_Gambar);
-    loadPeerList();
-    loadRubrikStatus();
-    loadMyResult();
-}
-
-function showStudentTab(t) {
-    ['profile','peer','rubrik','result'].forEach(id => {
-        const el = document.getElementById('stab-'+id);
-        if (el) el.style.display = 'none';
-    });
-    const target = document.getElementById('stab-'+t);
-    if (target) target.style.display = 'flex';
-    document.querySelectorAll('#studentDash .tab').forEach((btn,i) => {
-        const tabs = ['profile','peer','rubrik','result'];
-        btn.classList.toggle('active', tabs[i] === t);
-    });
-    if (t === 'rubrik') loadRubrikStatus();
-}
-
-async function loadPeerList() {
-    if (!curUser) return;
-    const kp    = curUser.No_KP.toString().trim();
-    const kelas = curUser.Kelas.toString().trim();
-    try {
-        const r = await fetch(`${API}?action=getClassmates&noKP=${encodeURIComponent(kp)}&kelas=${encodeURIComponent(kelas)}`);
-        const o = await r.json();
-        if (o.status === "success") {
-            const classmates = o.data;
-            const doneList   = (o.done || []).map(d => d.toString().trim());
-            renderPeerList(classmates, doneList);
-        }
-    } catch(e) {
-        document.getElementById('peerList').innerHTML = `<div style="color:var(--text-light); font-size:12px; padding:20px; text-align:center;">Ralat memuatkan senarai rakan</div>`;
-    }
-}
-
-function renderPeerList(classmates, doneList) {
-    const total = classmates.length;
-    let doneCount = 0;
-    const doneNorm = doneList.map(k => normalizeKP(k));
-    const html = classmates.map(s => {
-        const isDone = doneNorm.includes(normalizeKP(s.No_KP));
-        if (isDone) doneCount++;
-        return `<div class="s-card ${isDone?'done':''}" onclick="selectPeer('${s.No_KP}')">
-            <div style="display:flex; align-items:center; gap:10px;">
-                <div class="eval-dot ${isDone?'done':'pending'}"></div>
-                <div style="flex:1;">
-                    <div style="font-size:13px; font-weight:600; color:var(--text-primary);">${s.Nama_Pelajar}</div>
-                    <div style="font-size:9px; font-family:'Space Mono',monospace; color:var(--text-muted); margin-top:2px;">${s.No_KP}</div>
-                </div>
-                ${isDone ? '<i class="fas fa-check" style="color:#22c55e; font-size:11px;"></i>' : ''}
-            </div>
-        </div>`;
-    }).join('');
-    document.getElementById('peerList').innerHTML = html || `<div style="color:var(--text-light); font-size:12px; padding:20px; text-align:center;">Tiada rakan sekelas ditemui</div>`;
-    document.getElementById('evalProgress').textContent = `${doneCount}/${total}`;
-    if (doneCount === total && total > 0) {
-        document.getElementById('evalProgress').style.color = '#22c55e';
-    }
-}
-
-function selectPeer(kp) {
-    peerTarget = sData.find ? sData.find(s => s.No_KP == kp) : null;
-    fetchAndShowPeer(kp);
-}
-
-async function fetchAndShowPeer(kp) {
-    try {
-        const r = await fetch(`${API}?action=checkLogin&noKP=${encodeURIComponent(kp)}`);
-        const o = await r.json();
-        if (o.status === "success") {
-            peerTarget = o.data;
-            showPeerPanel(peerTarget);
-        }
-    } catch(e) {}
-}
-
-function showPeerPanel(peer) {
-    document.getElementById('peerPanel').style.display = 'block';
-    document.getElementById('peerPanelEmpty').style.display = 'none';
-    document.getElementById('peerName').textContent = peer.Nama_Pelajar;
-    document.getElementById('peerKlass').textContent = `KP: ${peer.No_KP} | ${peer.Kelas}`;
-
-    const img = document.getElementById('peerImg');
-    const ph = document.getElementById('peerImgPh');
-    loadImage(img, ph, peer.Link_Gambar);
-
-    document.querySelectorAll('.s-card').forEach(c => c.classList.remove('selected'));
-    ['q1','q2','q3','q4','q5'].forEach(qid => {
-        document.querySelectorAll(`#${qid} .likert-btn`).forEach(b => {
-            b.className = 'likert-btn';
-        });
-    });
-    if (peerScores[peer.No_KP]) peerScores[peer.No_KP] = null;
-    document.getElementById('peerNote').value = '';
-    document.getElementById('peerDoneTag').style.display = 'none';
-    document.getElementById('submitPeerBtn').disabled = false;
-    document.getElementById('submitPeerBtn').innerHTML = '<i class="fas fa-paper-plane me-2"></i> HANTAR PENILAIAN';
-
-    checkPeerDone(peer.No_KP);
-}
-
-async function checkPeerDone(targetKP) {
-    try {
-        const r = await fetch(`${API}?action=checkPeerDone&evaluatorKP=${encodeURIComponent(curUser.No_KP)}&targetKP=${encodeURIComponent(targetKP)}`);
-        const o = await r.json();
-        if (o.done) {
-            document.getElementById('peerDoneTag').style.display = 'flex';
-            document.getElementById('submitPeerBtn').disabled = true;
-            document.getElementById('submitPeerBtn').innerHTML = '<i class="fas fa-check me-2"></i> SUDAH DIHANTAR';
-            if (o.data) {
-                ['q1','q2','q3','q4','q5'].forEach((qid, i) => {
-                    const val = o.data[qid];
-                    if (val) {
-                        const btns = document.querySelectorAll(`#${qid} .likert-btn`);
-                        btns.forEach(b => b.className = 'likert-btn');
-                        if (btns[val-1]) btns[val-1].className = `likert-btn sel-${val}`;
-                    }
-                });
-                document.getElementById('peerNote').value = o.data.note || '';
-            }
-        }
-    } catch(e) {}
-}
-
-function setLikert(qid, val, btn) {
-    document.querySelectorAll(`#${qid} .likert-btn`).forEach(b => b.className = 'likert-btn');
-    btn.className = `likert-btn sel-${val}`;
-    if (!peerScores[peerTarget?.No_KP]) peerScores[peerTarget?.No_KP] = {};
-    peerScores[peerTarget.No_KP][qid] = val;
-}
-
-async function submitPeerEval() {
-    if (!peerTarget) return;
-    const tgKP = peerTarget.No_KP.toString().trim();
-    const evKP = curUser.No_KP.toString().trim();
-
-    const scores = peerScores[tgKP] || {};
-    const missing = ['q1','q2','q3','q4','q5'].filter(q => !scores[q]);
-    if (missing.length > 0) {
-        showToast(`Sila jawab semua ${missing.length} soalan yang tinggal!`, 'warn');
-        return;
-    }
-
-    const btn = document.getElementById('submitPeerBtn');
-    btn.disabled = true;
-    btn.innerHTML = '<span class="spinner"></span> MENGHANTAR...';
-
-    try {
-        const chk = await fetch(`${API}?action=checkPeerDone&evaluatorKP=${encodeURIComponent(evKP)}&targetKP=${encodeURIComponent(tgKP)}`);
-        const chkO = await chk.json();
-        if (chkO.done) {
-            showToast('Anda sudah menilai rakan ini!', 'warn');
-            markPeerDone(tgKP);
-            return;
-        }
-    } catch(e) {}
-
-    const payload = {
-        action: "submitPeerEval",
-        evaluatorKP: evKP,
-        evaluatorName: curUser.Nama_Pelajar,
-        evaluatorKelas: curUser.Kelas,
-        targetKP: tgKP,
-        targetName: peerTarget.Nama_Pelajar,
-        targetKelas: peerTarget.Kelas,
-        q1: scores.q1, q2: scores.q2, q3: scores.q3,
-        q4: scores.q4, q5: scores.q5,
-        note: document.getElementById('peerNote').value || ''
-    };
-
-    try {
-        await fetch(API, { method: 'POST', mode: 'no-cors', body: JSON.stringify(payload) });
-        await new Promise(r => setTimeout(r, 1500));
-        const vr = await fetch(`${API}?action=checkPeerDone&evaluatorKP=${encodeURIComponent(evKP)}&targetKP=${encodeURIComponent(tgKP)}`);
-        const vO = await vr.json();
-        if (vO.done) {
-            showToast('Penilaian berjaya dihantar dan disahkan!', 'success');
-        } else {
-            showToast('Data dihantar. Muat semula untuk sahkan.', 'warn');
-        }
-        markPeerDone(tgKP);
-        await loadPeerList();
-    } catch(e) {
-        showToast('Ralat menghantar penilaian', 'err');
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i> HANTAR PENILAIAN';
-    }
-}
-
-function markPeerDone(tgKP) {
-    document.getElementById('submitPeerBtn').disabled = true;
-    document.getElementById('submitPeerBtn').innerHTML = '<i class="fas fa-check me-2"></i> SUDAH DIHANTAR';
-    document.getElementById('peerDoneTag').style.display = 'flex';
-    const card = document.querySelector(`#peerList .s-card[onclick*="${tgKP}"]`);
-    if (card) {
-        card.classList.add('done');
-        const dot = card.querySelector('.eval-dot');
-        if (dot) { dot.classList.remove('pending'); dot.classList.add('done'); }
-        if (!card.querySelector('.fa-check')) {
-            card.querySelector('div').insertAdjacentHTML('beforeend',
-                '<i class="fas fa-check" style="color:#22c55e; font-size:11px;"></i>');
-        }
-    }
-}
-
-async function loadMyResult() {
-    if (!curUser) return;
-    const box = document.getElementById('myPeerStatusContent');
-    if (!box) return;
-    try {
-        const r = await fetch(`${API}?action=getClassmates&noKP=${encodeURIComponent(curUser.No_KP)}&kelas=${encodeURIComponent(curUser.Kelas)}`);
-        const o = await r.json();
-        if (o.status === 'success') {
-            const total = o.data.length;
-            const done  = (o.done || []).length;
-            const pct   = total > 0 ? Math.round((done/total)*100) : 0;
-            const allDone = done === total && total > 0;
-            box.innerHTML = `
-                <div style="display:flex; align-items:center; gap:16px; margin-bottom:16px;">
-                    <div style="flex:1;">
-                        <div style="display:flex; justify-content:space-between; margin-bottom:6px;">
-                            <span style="font-size:12px; color:var(--text-muted);">Kemajuan Penilaian</span>
-                            <span style="font-size:12px; font-weight:800; font-family:'Space Mono',monospace; color:${allDone?'#22c55e':'var(--primary)'};">${done} / ${total}</span>
-                        </div>
-                        <div style="height:8px; background:var(--bg-surface); border-radius:8px; overflow:hidden;">
-                            <div style="height:100%; width:${pct}%; background:${allDone?'linear-gradient(90deg,#22c55e,#0ea5e9)':'linear-gradient(90deg,var(--primary),var(--secondary))'}; border-radius:8px; transition:width 0.5s;"></div>
-                        </div>
-                    </div>
-                </div>
-                <div style="display:flex; align-items:center; gap:10px; padding:14px; border-radius:var(--radius-sm); background:${allDone?'#dcfce7':'#dbeafe'}; border:1px solid ${allDone?'#86efac':'#93c5fd'};">
-                    <i class="fas ${allDone?'fa-circle-check':'fa-hourglass-half'}" style="font-size:1.4rem; color:${allDone?'#22c55e':'var(--primary)'};"></i>
-                    <div>
-                        <div style="font-size:12px; font-weight:700; color:${allDone?'#166534':'#1e40af'};">${allDone ? 'Semua penilaian selesai!' : 'Masih ada rakan yang belum dinilai'}</div>
-                        <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">${allDone ? 'Terima kasih. Data anda telah dihantar kepada pensyarah.' : `Pergi ke tab Peer Eval untuk melengkapkan ${total-done} penilaian yang tinggal.`}</div>
-                    </div>
-                </div>`;
-        } else {
-            box.innerHTML = `<p style="font-size:12px; color:var(--text-muted); text-align:center;">Tiada data kelas ditemui.</p>`;
-        }
-    } catch(e) {
-        box.innerHTML = `<p style="font-size:12px; color:var(--text-muted); text-align:center;">Ralat memuatkan status.</p>`;
-    }
-}
-
-// Upload functions
-async function hUp() {
-    const f = document.getElementById('fIn');
-    if (!f.files[0]) return showToast('Pilih fail dahulu!', 'warn');
-    const btn = document.getElementById('uploadBtn');
-    btn.disabled = true; btn.innerHTML = '<span class="spinner"></span>';
-    try {
-        const base64 = await fileToBase64(f.files[0]);
-        await fetch(API, { method:'POST', mode:'no-cors', body: JSON.stringify({
-            action:"uploadImage", noKP: curUser.No_KP.toString(),
-            imageData: base64, mimeType: f.files[0].type, fileName: "MPU3221_"+curUser.No_KP
-        })});
-        await new Promise(r => setTimeout(r, 2000));
-        const res = await fetch(`${API}?action=checkLogin&noKP=${encodeURIComponent(curUser.No_KP)}`);
-        const o = await res.json();
-        if (o.status === "success") {
-            localStorage.setItem('userMPU', JSON.stringify(o.data));
-            renderStudent(o.data);
-            showToast('Gambar berjaya dimuatnaik!');
-        }
-    } catch(e) { showToast('Ralat upload: '+e.message, 'err'); }
-    btn.disabled = false; btn.innerHTML = '<i class="fas fa-upload me-1"></i> UPLOAD';
-}
-
-function fileToBase64(file) {
-    return new Promise((res,rej) => {
-        const r = new FileReader();
-        r.onload = e => res(e.target.result.split(',')[1]);
-        r.onerror = () => rej(new Error("Gagal baca fail"));
-        r.readAsDataURL(file);
-    });
-}
-
-function pImg(input) {
-    if (input.files[0]) {
-        const reader = new FileReader();
-        reader.onload = e => {
-            const img = document.getElementById('sImg');
-            img.src = e.target.result; img.style.display = 'block';
-            document.getElementById('sPl').style.display = 'none';
-        };
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-// ---- LECTURER ----
-async function initLecturer(email, name) {
-    document.getElementById('loginScreen').style.display = 'none';
-    document.getElementById('lecturerDash').style.display = 'flex';
-    document.getElementById('lecturerDash').style.flexDirection = 'column';
-    document.getElementById('lecName').textContent = name || email;
-    curLecEmail = email;
-    try {
-        const r = await fetch(`${API}?action=getLecturerStudents&email=${encodeURIComponent(email)}`);
-        const o = await r.json();
-        sData = o.data || [];
-        renderLecStudentList();
-        renderSummaryTable();
-    } catch(e) { showToast('Gagal memuatkan data', 'err'); }
-}
-
-function renderLecStudentList() {
-    const kelas = sData.length > 0 ? [...new Set(sData.map(s=>s.Kelas))].join(', ') : '';
-    document.getElementById('classInfo').textContent = kelas;
-    document.getElementById('sList').innerHTML = sData.map(s => {
-        const hasMark = s.markahSediaAda;
-        const hasPeer = s.peerSummary && s.peerSummary.count > 0;
-        return `<div class="s-card ${hasMark?'done':''}" data-kp="${s.No_KP}" onclick="selectStudent('${s.No_KP}')">
-            <div style="display:flex; align-items:center; gap:8px;">
-                <div class="eval-dot ${hasMark?'done':'pending'}"></div>
-                <div style="flex:1;">
-                    <div style="font-size:13px; font-weight:600; color:var(--text-primary);">${s.Nama_Pelajar}</div>
-                    <div style="font-size:9px; font-family:'Space Mono',monospace; color:var(--text-muted); margin-top:1px;">${s.Kelas} · ${s.No_KP}</div>
-                </div>
-                ${hasPeer ? `<span title="${s.peerSummary.count} penilaian rakan" style="font-size:9px; background:#e0f2fe; border:1px solid #7dd3fc; color:#0369a1; padding:2px 8px; border-radius:20px; font-weight:700; white-space:nowrap;">${s.peerSummary.count} <i class="fas fa-users"></i></span>` : ''}
-            </div>
-        </div>`;
-    }).join('');
-}
-
-function showLecTab(t) {
-    ['marking','peer','rubrik','summary'].forEach(id => {
-        const el = document.getElementById('ltab-'+id);
-        if (el) el.style.display = 'none';
-    });
-    const el = document.getElementById('ltab-'+t);
-    if (el) el.style.display = 'block';
-
-    document.querySelectorAll('#lecturerDash .tab').forEach((btn,i) => {
-        const tabs = ['marking','peer','rubrik','summary'];
-        btn.classList.toggle('active', tabs[i] === t);
-    });
-
-    if (t === 'marking') {
-        const gp = document.getElementById('gradingPanel');
-        const ge = document.getElementById('gradingEmpty');
-        if (curS && gp && ge) {
-            gp.style.display = 'block';
-            ge.style.display = 'none';
-        } else if (ge) {
-            if (gp) gp.style.display = 'none';
-            ge.style.display = 'flex';
-        }
-    }
-
-    if (t === 'peer') {
-        if (radarChart)     { radarChart.destroy();     radarChart = null; }
-        if (miniRadarChart) { miniRadarChart.destroy();  miniRadarChart = null; }
-        setTimeout(() => {
-            if (!curS) {
-                document.getElementById('radarEmpty').style.display = 'flex';
-                document.getElementById('radarContent').style.display = 'none';
-                document.getElementById('radarEmpty').innerHTML = `
-                    <div style="text-align:center; color:var(--text-light);">
-                        <i class="fas fa-hand-pointer" style="font-size:3rem; margin-bottom:12px; opacity:0.3; display:block;"></i>
-                        <p style="font-size:13px;">Pilih pelajar untuk lihat Spider Web Radar</p>
-                    </div>`;
-                return;
-            }
-            if (window._lastRadarKP === curS.No_KP.toString().trim() && window._lastRadarDims) {
-                const canvas = document.getElementById('radarChart');
-                if (canvas) {
-                    document.getElementById('radarEmpty').style.display = 'none';
-                    document.getElementById('radarContent').style.display = 'block';
-                    if (radarChart) { radarChart.destroy(); radarChart = null; }
-                    const ctx = canvas.getContext('2d');
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    radarChart = new Chart(ctx, buildRadarConfig(window._lastRadarDims, 'full'));
-                }
-            } else {
-                loadPeerData(curS.No_KP.toString().trim());
-            }
-        }, 150);
-    }
-
-    if (t === 'rubrik') {
-        if (curS) {
-            showRubrikLecPanel(curS);
-        } else {
-            document.getElementById('rubrikLecEmpty').style.display = 'flex';
-            document.getElementById('rubrikLecPanel').style.display = 'none';
-        }
-    }
-
-    if (t === 'summary') renderSummaryTable();
-}
-
-async function selectStudent(kp) {
-    curS = sData.find(s => s.No_KP == kp);
-    if (!curS) return;
-
-    document.querySelectorAll('#sList .s-card').forEach(c => c.classList.remove('selected'));
-    const clicked = document.querySelector(`#sList .s-card[data-kp="${kp}"]`);
-    if (clicked) clicked.classList.add('selected');
-
-    const activeTabId = ['marking','peer','rubrik','summary'].find(id => {
-        const el = document.getElementById('ltab-'+id);
-        return el && el.style.display !== 'none';
-    }) || 'marking';
-
-    document.getElementById('gradingPanel').style.display = 'block';
-    document.getElementById('gradingEmpty').style.display = 'none';
-    document.getElementById('ln').textContent = curS.Nama_Pelajar;
-    document.getElementById('lk').textContent = `KP: ${curS.No_KP} | ${curS.Kelas}`;
-    loadImage(document.getElementById('li'), document.getElementById('liPh'), curS.Link_Gambar);
-
-    if (curS.markahSediaAda) {
-        document.getElementById('h1').value  = curS.markahSediaAda.hp1  || '';
-        document.getElementById('h5').value  = curS.markahSediaAda.hp5  || '';
-        document.getElementById('h8').value  = curS.markahSediaAda.hp8  || '';
-        document.getElementById('h10').value = curS.markahSediaAda.hp10 || '';
-        document.getElementById('justTxt').value = (curS.markahSediaAda.just === "-") ? "" : (curS.markahSediaAda.just||"");
-    } else {
-        ['h1','h5','h8','h10','justTxt'].forEach(id => document.getElementById(id).value = '');
-    }
-    calc(); checkLimits();
-
-    const gp = document.getElementById('gradingPanel');
-    const ge = document.getElementById('gradingEmpty');
-    if (gp) gp.style.display = 'block';
-    if (ge) ge.style.display = 'none';
-
-    if (activeTabId === 'rubrik') {
-        showRubrikLecPanel(curS);
-    }
-
-    if (curS.peerSummary && curS.peerSummary.count > 0) {
-        showPeerBadge(curS.peerSummary);
-        showMiniRadar(curS.peerSummary);
-    } else {
-        const pb = document.getElementById('peerScoreBadge');
-        const mr = document.getElementById('miniRadarBox');
-        if (pb) pb.style.display = 'none';
-        if (mr) mr.style.display = 'none';
-    }
-
-    await loadPeerData(kp);
-
-    if (activeTabId === 'peer') {
-        setTimeout(() => { if (radarChart) radarChart.update(); }, 200);
-    }
-}
-
-async function loadPeerData(kp) {
-    const kpClean = kp.toString().trim();
-    try {
-        const r = await fetch(`${API}?action=getPeerSummary&targetKP=${encodeURIComponent(kpClean)}`);
-        const o = await r.json();
-        if (o.status === 'success' && o.evals && o.evals.length > 0) {
-            showPeerBadge(o);
-            showMiniRadar(o);
-            const peerTabEl = document.getElementById('ltab-peer');
-            const peerTabVisible = peerTabEl && peerTabEl.style.display !== 'none';
-            updateRadarPanel(kpClean, o);
-            if (peerTabVisible && radarChart) {
-                setTimeout(() => {
-                    if (radarChart) { radarChart.update(); }
-                }, 150);
-            }
-        } else {
-            document.getElementById('peerScoreBadge').style.display = 'none';
-            document.getElementById('miniRadarBox').style.display  = 'none';
-            document.getElementById('radarEmpty').style.display   = 'flex';
-            document.getElementById('radarContent').style.display = 'none';
-            document.getElementById('radarEmpty').innerHTML = `
-                <div style="text-align:center; color:var(--text-light);">
-                    <i class="fas fa-spider" style="font-size:2.5rem; margin-bottom:12px; opacity:0.3; display:block;"></i>
-                    <p style="font-size:13px; margin-bottom:6px;">${curS?.Nama_Pelajar || '--'}</p>
-                    <p style="font-size:11px; color:var(--text-muted);">Belum ada penilaian rakan diterima</p>
-                    <p style="font-size:10px; color:var(--text-light); margin-top:4px; font-family:'Space Mono',monospace;">KP: ${kpClean}</p>
-                </div>`;
-        }
-    } catch(e) {
-        console.error('loadPeerData error:', e);
-    }
-}
-
-function showPeerBadge(o) {
-    const avg = o.avg || 0;
-    const percent = ((avg/5)*30).toFixed(1);
-    document.getElementById('peerScoreBadge').style.display = 'block';
-    document.getElementById('peerAvgDisp').textContent = avg.toFixed(2) + '/5';
-    document.getElementById('peerCountDisp').textContent = `${o.count} penilai · ${percent}/30`;
-}
-
-function showMiniRadar(o) {
-    document.getElementById('miniRadarBox').style.display = 'block';
-    document.getElementById('miniRadarName').textContent = curS.Nama_Pelajar;
-
-    const avgDims = o.avgDims || [0,0,0,0,0];
-    const dimHtml = avgDims.map((v,i) => `
-        <div style="display:flex; align-items:center; gap:8px; margin-bottom:6px;">
-            <div style="width:10px; height:10px; border-radius:50%; background:${DIM_COLORS[i]}; flex-shrink:0;"></div>
-            <div style="flex:1; font-size:11px; color:var(--text-secondary);">${DIMS[i]}</div>
-            <div style="font-family:'Space Mono',monospace; font-size:11px; font-weight:700; color:var(--text-primary);">${v.toFixed(1)}</div>
-        </div>`).join('');
-    document.getElementById('miniDimScores').innerHTML = dimHtml;
-
-    if (miniRadarChart) { miniRadarChart.destroy(); miniRadarChart = null; }
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-        const canvas = document.getElementById('miniRadar');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        miniRadarChart = new Chart(ctx, buildRadarConfig(avgDims, 'mini'));
-    }));
-}
-
-function updateRadarPanel(kp, o) {
-    if (!curS) return;
-    const radarEmptyEl   = document.getElementById('radarEmpty');
-    const radarContentEl = document.getElementById('radarContent');
-    if (radarEmptyEl)   radarEmptyEl.style.display   = 'none';
-    if (radarContentEl) radarContentEl.style.display = 'block';
-    document.getElementById('radarStudentName').textContent = curS.Nama_Pelajar;
-    document.getElementById('radarMeta').textContent = `KP: ${curS.No_KP} | Kelas: ${curS.Kelas} | ${o.count} penilai`;
-
-    const avgDims = o.avgDims || [0,0,0,0,0];
-    const overallAvg = avgDims.reduce((a,b)=>a+b,0)/5;
-    const suggestMin = Math.max(0, Math.round((overallAvg/5)*30*0.85));
-    const suggestMax = Math.min(30, Math.round((overallAvg/5)*30));
-    document.getElementById('suggestRange').textContent = `${suggestMin} — ${suggestMax} / 30`;
-
-    document.getElementById('dimBreakdown').innerHTML = avgDims.map((v,i) => `
-        <div style="margin-bottom:10px;">
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-                <span style="font-size:11px; color:var(--text-secondary); display:flex; align-items:center; gap:6px;">
-                    <span style="width:8px;height:8px;border-radius:50%;background:${DIM_COLORS[i]};display:inline-block;"></span>
-                    ${DIMS[i]}
-                </span>
-                <span style="font-size:11px; font-weight:700; font-family:'Space Mono',monospace; color:var(--text-primary);">${v.toFixed(2)}/5</span>
-            </div>
-            <div style="height:6px; background:var(--bg-surface); border-radius:6px; overflow:hidden;">
-                <div style="height:100%; width:${(v/5)*100}%; background:${DIM_COLORS[i]}; border-radius:6px; transition:width 0.5s;"></div>
-            </div>
-        </div>`).join('');
-
-    const minDim = DIMS[avgDims.indexOf(Math.min(...avgDims))];
-    const maxDim = DIMS[avgDims.indexOf(Math.max(...avgDims))];
-    let interpret = '';
-    if (overallAvg >= 4.5) interpret = `Pelajar ini dinilai cemerlang secara keseluruhan oleh rakan. Kekuatan paling ketara ialah dimensi <strong>${maxDim}</strong>.`;
-    else if (overallAvg >= 3.5) interpret = `Prestasi baik dengan kekuatan dalam dimensi <strong>${maxDim}</strong>. Boleh tingkatkan lagi dimensi <strong>${minDim}</strong>.`;
-    else if (overallAvg >= 2.5) interpret = `Prestasi memuaskan. Pensyarah disyorkan memberi perhatian kepada dimensi <strong>${minDim}</strong> yang agak lemah.`;
-    else interpret = `Prestasi kurang memuaskan mengikut penilaian rakan. Dimensi <strong>${minDim}</strong> memerlukan perhatian serius.`;
-    document.getElementById('radarInterpret').innerHTML = interpret;
-
-    if (o.evals && o.evals.length > 0) {
-        document.getElementById('evalBreakdown').innerHTML = o.evals.map((ev, idx) => {
-            const avg = ((ev.q1+ev.q2+ev.q3+ev.q4+ev.q5)/5).toFixed(1);
-            return `<div style="padding:12px; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius-sm); text-align:center;">
-                <div style="font-size:9px; color:var(--text-muted); margin-bottom:6px; text-transform:uppercase;">Penilai #${idx+1}</div>
-                <div style="font-size:20px; font-weight:800; font-family:'Space Mono',monospace; color:${avg>=4?'#22c55e':avg>=3?'#eab308':'#ef4444'};">${avg}</div>
-                <div style="font-size:9px; color:var(--text-light); margin-top:4px;">/5</div>
-                <div style="margin-top:8px; display:flex; justify-content:center; gap:3px; flex-wrap:wrap;">
-                    ${[ev.q1,ev.q2,ev.q3,ev.q4,ev.q5].map((v,i) => `<div style="width:20px; height:20px; border-radius:4px; background:${DIM_COLORS[i]}; opacity:${v/5}; display:flex; align-items:center; justify-content:center; font-size:9px; font-weight:700; color:white;">${v}</div>`).join('')}
-                </div>
-                ${ev.note ? `<div style="font-size:9px; color:var(--text-muted); margin-top:8px; font-style:italic;">"${ev.note.substring(0,50)}${ev.note.length>50?'...':''}"</div>` : ''}
-            </div>`;
-        }).join('');
-    }
-
-    window._lastRadarDims = avgDims;
-    window._lastRadarKP   = kp;
-
-    if (radarChart) { radarChart.destroy(); radarChart = null; }
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-        const canvas = document.getElementById('radarChart');
-        if (!canvas) return;
-        const peerTab = document.getElementById('ltab-peer');
-        if (peerTab && peerTab.style.display === 'none') return;
-        const ctx = canvas.getContext('2d');
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        radarChart = new Chart(ctx, buildRadarConfig(avgDims, 'full'));
-    }));
-}
-
-function buildRadarConfig(dims, size) {
-    const isMini = size === 'mini';
-    return {
-        type: 'radar',
-        data: {
-            labels: DIMS,
-            datasets: [{
-                label: 'Peer Score',
-                data: dims,
-                backgroundColor: 'rgba(37,99,235,0.12)',
-                borderColor: '#2563eb',
-                borderWidth: isMini ? 1.5 : 2,
-                pointBackgroundColor: DIM_COLORS,
-                pointBorderColor: 'transparent',
-                pointRadius: isMini ? 3 : 5,
-                pointHoverRadius: isMini ? 4 : 7,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: true,
-            plugins: { legend: { display: false }, tooltip: {
-                backgroundColor: 'rgba(255,255,255,0.95)',
-                borderColor: 'var(--border)',
-                borderWidth: 1,
-                titleColor: 'var(--text-primary)',
-                bodyColor: 'var(--text-secondary)',
-                callbacks: {
-                    label: ctx => ` ${ctx.formattedValue} / 5`
-                }
-            }},
-            scales: {
-                r: {
-                    min: 0, max: 5,
-                    ticks: { stepSize: 1, color: 'var(--text-light)', font: { size: isMini ? 8 : 10 }, backdropColor: 'transparent' },
-                    grid: { color: 'var(--border)' },
-                    angleLines: { color: 'var(--border)' },
-                    pointLabels: { color: 'var(--text-secondary)', font: { size: isMini ? 8 : 11, weight: '600' } }
-                }
-            }
-        }
-    };
-}
-
-function calc() {
-    const v = ['h1','h5','h8','h10'].map(id => Math.max(0, Number(document.getElementById(id).value)||0));
-    const t = v.reduce((a,b)=>a+b,0);
-    document.getElementById('tm').textContent = t;
-    const g = calculateGred(t);
-    document.getElementById('gd').textContent = g;
-    document.getElementById('justArea').style.display = g === 'A+' ? 'block' : 'none';
-    validate();
-}
-
-function checkLimits() {
-    const limits = { h1: 30, h5: 10, h8: 30, h10: 30 };
-    let exceeded = false;
-    Object.entries(limits).forEach(([id, max]) => {
-        const val = Number(document.getElementById(id).value);
-        const el = document.getElementById(id);
-        if (val > max) {
-            el.value = max; calc();
-            el.style.borderColor = '#ef4444';
-            exceeded = true;
-        } else { el.style.borderColor = ''; }
-    });
-    document.getElementById('limitWarn').style.display = exceeded ? 'flex' : 'none';
-}
-
-function validate() {
-    const g = document.getElementById('gd').textContent;
-    const j = document.getElementById('justTxt').value.trim();
-    document.getElementById('saveBtn').disabled = (g === 'A+' && j === '');
-}
-
-async function save() {
-    const btn = document.getElementById('saveBtn');
-    btn.disabled = true; btn.innerHTML = '<span class="spinner"></span> MENYIMPAN...';
-    const p = {
-        action: "submitScores",
-        noKP: curS.No_KP,
-        hp1: Math.min(30, Number(document.getElementById('h1').value)||0),
-        hp5: Math.min(10, Number(document.getElementById('h5').value)||0),
-        hp8: Math.min(30, Number(document.getElementById('h8').value)||0),
-        hp10: Math.min(30, Number(document.getElementById('h10').value)||0),
-        justifikasi: document.getElementById('justTxt').value || "-",
-        penilai: curLecEmail
-    };
-    try {
-        await fetch(API, { method:'POST', mode:'no-cors', body: JSON.stringify(p) });
-        showToast('Markah berjaya disimpan!');
-        const r = await fetch(`${API}?action=getLecturerStudents&email=${encodeURIComponent(curLecEmail)}`);
-        const o = await r.json();
-        sData = o.data || [];
-        renderLecStudentList();
-        renderSummaryTable();
-    } catch(e) { showToast('Ralat menyimpan markah', 'err'); }
-    btn.disabled = false; btn.innerHTML = '<i class="fas fa-save me-2"></i> SIMPAN MARKAH';
-}
-
-function renderSummaryTable() {
-    const tbody = document.getElementById('summaryBody');
-    if (!sData.length) { tbody.innerHTML = ''; return; }
-    tbody.innerHTML = sData.map(s => {
-        const m = s.markahSediaAda || {};
-        const t = (m.hp1||0)+(m.hp5||0)+(m.hp8||0)+(m.hp10||0);
-        const g = t > 0 ? calculateGred(t) : '--';
-        const gColor = g==='A+'||g==='A'||g==='A-' ? '#22c55e' : g==='B+'||g==='B'||g==='B-' ? '#2563eb' : g==='C+'||g==='C'||g==='C-' ? '#eab308' : '#ef4444';
-        return `<tr style="border-bottom:1px solid var(--border); transition:background 0.15s;" onmouseover="this.style.background='var(--bg-hover)'" onmouseout="this.style.background=''">
-            <td style="padding:10px 12px; font-weight:600; color:var(--text-primary);">${s.Nama_Pelajar}<br><span style="font-size:9px; font-family:'Space Mono',monospace; color:var(--text-muted);">${s.Kelas}</span></td>
-            <td style="padding:10px 12px; text-align:center; font-family:'Space Mono',monospace; color:var(--text-primary);">${m.hp1||'-'}</td>
-            <td style="padding:10px 12px; text-align:center; font-family:'Space Mono',monospace; color:var(--text-primary);">${m.hp5||'-'}</td>
-            <td style="padding:10px 12px; text-align:center; font-family:'Space Mono',monospace; color:var(--accent);">${m.hp8||'-'}</td>
-            <td style="padding:10px 12px; text-align:center; font-family:'Space Mono',monospace; color:var(--text-primary);">${m.hp10||'-'}</td>
-            <td style="padding:10px 12px; text-align:center; font-family:'Space Mono',monospace; font-weight:700; font-size:15px; color:var(--text-primary);">${t||'-'}</td>
-            <td style="padding:10px 12px; text-align:center; font-weight:800; color:${gColor};">${g}</td>
-            <td style="padding:10px 12px; text-align:center; font-family:'Space Mono',monospace; color:var(--text-muted);">--</td>
-            <td style="padding:10px 12px; text-align:center; font-size:10px; color:var(--text-light);">--</td>
-        </tr>`;
-    }).join('');
-}
-
-// ================================================================
-// RUBRIK HP5 / HP6 — Data & Rendering
-// ================================================================
-const RUBRIK_HP5_DATA = [
-    {no:1,  nama:"Tajuk Kertas Cadangan",        penerangan:"Tajuk ringkas, tepat, menggambarkan jenis & tujuan persatuan", max:1},
-    {no:2,  nama:"Jenis Persatuan",              penerangan:"Nyataan jelas tentang kategori: akademik, sukan, kebajikan, dll.", max:1},
-    {no:3,  nama:"Pengenalan",                   penerangan:"Latar belakang penubuhan, isu yang relevan, keperluan persatuan dalam konteks sekolah", max:2},
-    {no:4,  nama:"Tujuan",                       penerangan:"Penjelasan umum mengapa persatuan ini perlu ditubuhkan, selaras dengan dasar sekolah", max:2},
-    {no:5,  nama:"Objektif",                     penerangan:"3–5 objektif spesifik, realistik, boleh diukur, menggunakan kata kerja tindakan", max:3},
-    {no:6,  nama:"Logo dan Moto",                penerangan:"Reka bentuk logo dengan simbol bermakna; moto menyokong misi", max:2},
-    {no:7,  nama:"Misi dan Visi",                penerangan:"Pernyataan misi (fungsi semasa) dan visi (aspirasi masa depan), selaras dengan matlamat sekolah", max:2},
-    {no:8,  nama:"Jawatankuasa & Tugas",         penerangan:"Senarai jawatan, bilangan ahli munasabah, perincian tugas setiap jawatan", max:3},
-    {no:9,  nama:"Perlembagaan & Peraturan",     penerangan:"Struktur formal: keahlian, mesyuarat, pemilihan, tanggungjawab, etika, tindakan disiplin", max:4},
-    {no:10, nama:"Perancangan Aktiviti & Takwim",penerangan:"Sekurang-kurangnya 4 aktiviti dengan tarikh/minggu, selaras objektif. Tambahan jika ada kolaborasi.", max:4},
-    {no:11, nama:"Carta Alir Penubuhan",         penerangan:"Paparan langkah demi langkah dengan elemen visual: permohonan → kelulusan → mesyuarat → pelantikan", max:2},
-    {no:12, nama:"Surat Penubuhan",              penerangan:"Surat rasmi kepada Pengetua/Guru Penyelaras, format betul, bahasa formal, tandatangan", max:2},
-    {no:13, nama:"Penutup",                      penerangan:"Ringkasan isi utama, harapan sokongan, kesediaan ahli, komitmen. Gaya bahasa positif.", max:2},
-];
-
-const RUBRIK_HP6_DATA = [
-    {no:1, nama:"Gaya Bahasa",       penerangan:"Penggunaan bahasa rasmi, tatabahasa betul, kosa kata sesuai konteks. Tiada singkatan/slanga.", max:3},
-    {no:2, nama:"Kejelasan Persembahan Idea (HP5) ",     penerangan:"Susunan bahagian konsisten mengikut format kertas cadangan. Perenggan tersusun, idea mengalir.", max:4},
-    {no:3, nama:"Kerjasama Kumpulan",penerangan:"Bukti kesepaduan dari segi gaya penulisan. Kandungan selari dan tidak berulang antara ahli.", max:3},
-];
-
-async function loadRubrikStatus() {
-    if (!curUser) return;
-    renderRubrikTables(null);
-    try {
-        const r = await fetch(`${API}?action=getRubrikStatus&noKP=${encodeURIComponent(curUser.No_KP)}`);
-        const o = await r.json();
-        if (o.status === 'success' && o.ada) {
-            document.getElementById('rubrikStatusBadge').style.display = 'flex';
-            document.getElementById('rubrikStatusText').textContent = `Dinilai pada ${o.tarikh ? new Date(o.tarikh).toLocaleDateString('ms-MY') : '--'}`;
-            renderRubrikTables(o);
-        } else {
-            document.getElementById('rubrikStatusBadge').style.display = 'none';
-            renderRubrikTables(null);
-        }
-    } catch(e) {
-        renderRubrikTables(null);
-    }
-}
-
-function renderRubrikTables(data) {
-    const hp5Keys = ['r1','r2','r3','r4','r5','r6','r7','r8','r9','r10','r11','r12','r13'];
-    let hp5Sum = 0;
-    const hp5Rows = RUBRIK_HP5_DATA.map((item, idx) => {
-        const mark = data ? (Number(data['r'+(idx+1)]) || 0) : null;
-        if (mark !== null) hp5Sum += mark;
-        const pct  = mark !== null ? (mark/item.max)*100 : 0;
-        const col  = pct >= 80 ? '#22c55e' : pct >= 50 ? '#eab308' : pct > 0 ? '#ef4444' : 'var(--text-light)';
-        return `<tr style="border-bottom:1px solid var(--border); transition:background 0.15s;"
-                    onmouseover="this.style.background='var(--bg-hover)'"
-                    onmouseout="this.style.background=''">
-            <td style="padding:10px; color:var(--text-muted); font-family:'Space Mono',monospace; font-size:10px; text-align:center;">${item.no}</td>
-            <td style="padding:10px; font-weight:600; font-size:12px; color:var(--text-primary);">${item.nama}</td>
-            <td style="padding:10px; font-size:11px; color:var(--text-secondary); line-height:1.5;">${item.penerangan}</td>
-            <td style="padding:10px; text-align:center; font-family:'Space Mono',monospace; font-size:11px; color:var(--text-muted);">${item.max}</td>
-            <td style="padding:10px; text-align:center;">
-                ${data ? `<span style="font-family:'Space Mono',monospace; font-size:15px; font-weight:800; color:${col};">${mark}</span>`
-                       : `<span style="color:var(--text-light); font-size:11px;">—</span>`}
-            </td>
-        </tr>`;
-    }).join('');
-    document.getElementById('rubrikHP5Body').innerHTML = hp5Rows;
-    document.getElementById('hp5Total').textContent = data ? hp5Sum : '—';
-
-    let hp6Sum = 0;
-    const hp6Rows = RUBRIK_HP6_DATA.map((item, idx) => {
-        const mark = data ? (Number(data['g'+(idx+1)]) || 0) : null;
-        if (mark !== null) hp6Sum += mark;
-        const pct  = mark !== null ? (mark/item.max)*100 : 0;
-        const col  = pct >= 80 ? '#0ea5e9' : pct >= 50 ? '#eab308' : pct > 0 ? '#ef4444' : 'var(--text-light)';
-        return `<tr style="border-bottom:1px solid var(--border); transition:background 0.15s;"
-                    onmouseover="this.style.background='var(--bg-hover)'"
-                    onmouseout="this.style.background=''">
-            <td style="padding:10px; color:var(--text-muted); font-family:'Space Mono',monospace; font-size:10px; text-align:center;">${item.no}</td>
-            <td style="padding:10px; font-weight:600; font-size:12px; color:var(--text-primary);">${item.nama}</td>
-            <td style="padding:10px; font-size:11px; color:var(--text-secondary); line-height:1.5;">${item.penerangan}</td>
-            <td style="padding:10px; text-align:center; font-family:'Space Mono',monospace; font-size:11px; color:var(--text-muted);">${item.max}</td>
-            <td style="padding:10px; text-align:center;">
-                ${data ? `<span style="font-family:'Space Mono',monospace; font-size:15px; font-weight:800; color:${col};">${mark}</span>`
-                       : `<span style="color:var(--text-light); font-size:11px;">—</span>`}
-            </td>
-        </tr>`;
-    }).join('');
-    document.getElementById('rubrikHP6Body').innerHTML = hp6Rows;
-    document.getElementById('hp6Total').textContent = data ? hp6Sum : '—';
-}
-
-// ================================================================
-// RUBRIK — LECTURER INPUT FUNCTIONS
-// ================================================================
-const LEC_HP5 = [
-    {id:'r1',  nama:"Tajuk Kertas Cadangan",         max:1},
-    {id:'r2',  nama:"Jenis Persatuan",               max:1},
-    {id:'r3',  nama:"Pengenalan",                    max:2},
-    {id:'r4',  nama:"Tujuan",                        max:2},
-    {id:'r5',  nama:"Objektif",                      max:3},
-    {id:'r6',  nama:"Logo dan Moto",                 max:2},
-    {id:'r7',  nama:"Misi dan Visi",                 max:2},
-    {id:'r8',  nama:"Jawatankuasa & Tugas",           max:3},
-    {id:'r9',  nama:"Perlembagaan & Peraturan",      max:4},
-    {id:'r10', nama:"Perancangan Aktiviti & Takwim", max:4},
-    {id:'r11', nama:"Carta Alir Penubuhan",          max:2},
-    {id:'r12', nama:"Surat Penubuhan",               max:2},
-    {id:'r13', nama:"Penutup",                       max:2},
-];
-const LEC_HP6 = [
-    {id:'g1', nama:"Laras Bahasa (HP5) & Kesesuaian Atribut (KMK7)",        max:3},
-    {id:'g2', nama:"Kejelasan Persembahan Idea (HP5) & Aplikasi (KMK7) ",      max:4},
-    {id:'g3', nama:"Organisasi Maklumat (HP5) & Tindakan/Sokongan (KMK7)", max:3},
-];
-
-function renderRubrikInputs(dataObj) {
-    function valColor(v, max) {
-        const pct = max > 0 ? v/max : 0;
-        if (v === 0) return 'var(--text-light)';
-        return pct >= 0.8 ? '#22c55e' : pct >= 0.5 ? '#eab308' : '#ef4444';
-    }
-
-    document.getElementById('rubrikHP5Inputs').innerHTML = LEC_HP5.map(item => {
-        const v   = dataObj ? (Number(dataObj[item.id])||0) : 0;
-        const col = valColor(v, item.max);
-        return `<div style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#faf5ff; border:1px solid #e9d5ff; border-radius:var(--radius-sm);">
-            <div style="flex:1; font-size:12px; font-weight:600; color:var(--text-primary); line-height:1.3;">${item.nama}</div>
-            <div style="font-size:9px; color:var(--text-muted); white-space:nowrap; flex-shrink:0;">/ ${item.max}</div>
-            <input type="number" id="rub_${item.id}" min="0" max="${item.max}" value="${v}"
-                oninput="clampRubrik('${item.id}',${item.max}); calcRubrikTotal();"
-                style="width:54px; padding:7px 6px; text-align:center; border-radius:var(--radius-sm); font-family:'Space Mono',monospace; font-size:14px; font-weight:800; border:1px solid #d8b4fe; color:${col}; flex-shrink:0;">
-        </div>`;
-    }).join('');
-
-    document.getElementById('rubrikHP6Inputs').innerHTML = LEC_HP6.map(item => {
-        const v   = dataObj ? (Number(dataObj[item.id])||0) : 0;
-        const col = valColor(v, item.max);
-        return `<div style="display:flex; align-items:center; gap:10px; padding:10px 14px; background:#f0f9ff; border:1px solid #bae6fd; border-radius:var(--radius-sm);">
-            <div style="flex:1; font-size:12px; font-weight:600; color:var(--text-primary); line-height:1.3;">${item.nama}</div>
-            <div style="font-size:9px; color:var(--text-muted); white-space:nowrap; flex-shrink:0;">/ ${item.max}</div>
-            <input type="number" id="rub_${item.id}" min="0" max="${item.max}" value="${v}"
-                oninput="clampRubrik('${item.id}',${item.max}); calcRubrikTotal();"
-                style="width:54px; padding:7px 6px; text-align:center; border-radius:var(--radius-sm); font-family:'Space Mono',monospace; font-size:14px; font-weight:800; border:1px solid #7dd3fc; color:${col}; flex-shrink:0;">
-        </div>`;
-    }).join('');
-
-    calcRubrikTotal();
-
-    const autoMsg = document.getElementById('rubrikAutoMsg');
-    if (autoMsg) autoMsg.style.display = 'flex';
-
-    if (dataObj && dataObj.hp5 !== undefined) {
-        const hp5Raw    = dataObj.hp5;
-        const hp5Scaled = Math.min(10, Math.round((hp5Raw / 30) * 10));
-        const scaleEl   = document.getElementById('rubrikScaleInfo');
-        if (!scaleEl) {
-            const autoMsgEl = document.getElementById('rubrikAutoMsg');
-            if (autoMsgEl) {
-                const infoDiv = document.createElement('div');
-                infoDiv.id    = 'rubrikScaleInfo';
-                infoDiv.style.cssText = 'margin-top:8px; padding:10px 14px; background:#faf5ff; border:1px solid #e9d5ff; border-radius:var(--radius-sm); font-size:11px; color:var(--text-muted);';
-                infoDiv.innerHTML = `<i class="fas fa-calculator" style="color:var(--secondary); margin-right:6px;"></i>
-                    Rubrik HP5: <strong style="color:var(--text-primary);">${hp5Raw}/30</strong> →
-                    Markah HP5 dalam rekod: <strong style="color:var(--secondary);">${hp5Scaled}/10</strong>
-                    &nbsp;<span style="font-size:9px; opacity:0.6;">(${hp5Raw}/30 × 10 = ${hp5Scaled})</span>`;
-                autoMsgEl.parentNode.insertBefore(infoDiv, autoMsgEl.nextSibling);
-            }
-        } else {
-            scaleEl.innerHTML = `<i class="fas fa-calculator" style="color:var(--secondary); margin-right:6px;"></i>
-                Rubrik HP5: <strong style="color:var(--text-primary);">${hp5Raw}/30</strong> →
-                Markah HP5 dalam rekod: <strong style="color:var(--secondary);">${hp5Scaled}/10</strong>
-                &nbsp;<span style="font-size:9px; opacity:0.6;">(${hp5Raw}/30 × 10 = ${hp5Scaled})</span>`;
-        }
-    }
-}
-
-function clampRubrik(id, max) {
-    const el = document.getElementById('rub_' + id);
-    if (!el) return;
-    let v = Number(el.value);
-    if (v > max) { el.value = max; v = max; }
-    if (v < 0)   { el.value = 0;   v = 0;   }
-    el.style.color = v >= max*0.8 ? '#22c55e' : v >= max*0.5 ? '#eab308' : '#ef4444';
-}
-
-function calcRubrikTotal() {
-    const hp5Raw = LEC_HP5.reduce((s,i) => s + (Number(document.getElementById('rub_'+i.id)?.value)||0), 0);
-    const hp6    = LEC_HP6.reduce((s,i) => s + (Number(document.getElementById('rub_'+i.id)?.value)||0), 0);
-
-    const hp5Scaled = Math.min(10, Math.round((hp5Raw / 30) * 10));
-
-    const hp5El = document.getElementById('lec_hp5Total');
-    const hp6El = document.getElementById('lec_hp6Total');
-    const hp5SubEl = document.getElementById('lec_hp5Scaled');
-
-    if (hp5El) {
-        hp5El.textContent = hp5Raw;
-        hp5El.style.color = hp5Raw >= 24 ? '#22c55e' : hp5Raw >= 15 ? '#eab308' : 'var(--secondary)';
-    }
-    if (hp5SubEl) {
-        hp5SubEl.textContent = `→ ${hp5Scaled}/10 markah`;
-    }
-    if (hp6El) {
-        hp6El.textContent = hp6;
-        hp6El.style.color = hp6 >= 8 ? '#22c55e' : hp6 >= 5 ? '#eab308' : 'var(--accent)';
-    }
-
-    const scaleEl = document.getElementById('rubrikScaleInfo');
-    if (scaleEl) {
-        scaleEl.innerHTML = `<i class="fas fa-calculator" style="color:var(--secondary); margin-right:6px;"></i>
-            Rubrik HP5: <strong style="color:var(--text-primary);">${hp5Raw}/30</strong> →
-            Markah HP5 dalam rekod: <strong style="color:var(--secondary);">${hp5Scaled}/10</strong>
-            &nbsp;<span style="font-size:9px; opacity:0.6;">(${hp5Raw}/30 × 10 = ${hp5Scaled})</span>`;
-    }
-}
-
-async function showRubrikLecPanel(student) {
-    if (!student) return;
-    document.getElementById('rubrikLecEmpty').style.display = 'none';
-    document.getElementById('rubrikLecPanel').style.display = 'block';
-    document.getElementById('rubrikLecStudentName').textContent = student.Nama_Pelajar;
-    document.getElementById('rubrikLecStudentKP').textContent  = `KP: ${student.No_KP} | ${student.Kelas}`;
-
-    try {
-        const r = await fetch(`${API}?action=getRubrikStatus&noKP=${encodeURIComponent(student.No_KP)}`);
-        const o = await r.json();
-        if (o.status === 'success' && o.ada) {
-            document.getElementById('rubrikLecExistBadge').style.display = 'flex';
-            renderRubrikInputs(o);
-        } else {
-            document.getElementById('rubrikLecExistBadge').style.display = 'none';
-            renderRubrikInputs(null);
-        }
-    } catch(e) {
-        renderRubrikInputs(null);
-    }
-}
-
-async function saveRubrik() {
-    if (!curS) return;
-    const btn     = document.getElementById('saveRubrikBtn');
-    const kpStr   = curS.No_KP.toString().trim();
-    btn.disabled  = true;
-    btn.innerHTML = '<span class="spinner"></span> MENYIMPAN...';
-
-    const rubrik = {};
-    LEC_HP5.forEach(i => {
-        rubrik[i.id] = Math.min(i.max, Math.max(0, Number(document.getElementById('rub_'+i.id)?.value)||0));
-    });
-    const gaya = {};
-    LEC_HP6.forEach(i => {
-        gaya[i.id] = Math.min(i.max, Math.max(0, Number(document.getElementById('rub_'+i.id)?.value)||0));
-    });
-
-    const hp5Raw    = LEC_HP5.reduce((s,i) => s + rubrik[i.id], 0);
-    const hp5Scaled = Math.min(10, Math.round((hp5Raw / 30) * 10));
-
-    const payload = {
-        action: "submitRubrik",
-        noKP:   kpStr,
-        nama:   curS.Nama_Pelajar,
-        kelas:  curS.Kelas,
-        rubrik, gaya,
-        penilai: curLecEmail
-    };
-
-    try {
-        await fetch(API, { method:'POST', mode:'no-cors', body: JSON.stringify(payload) });
-
-        let vData = null;
-        const MAX_RETRY = 5;
-        for (let attempt = 1; attempt <= MAX_RETRY; attempt++) {
-            btn.innerHTML = `<span class="spinner"></span> MENGESAHKAN... (${attempt}/${MAX_RETRY})`;
-            await new Promise(r => setTimeout(r, 2000));
-
-            try {
-                const vRes = await fetch(`${API}?action=getRubrikStatus&noKP=${encodeURIComponent(kpStr)}`);
-                const vObj = await vRes.json();
-                if (vObj.status === 'success' && vObj.ada) {
-                    vData = vObj;
-                    break;
-                }
-            } catch(retryErr) {}
-        }
-
-        if (vData) {
-            const badgeEl = document.getElementById('rubrikLecExistBadge');
-            if (badgeEl) {
-                badgeEl.style.display = 'flex';
-                badgeEl.innerHTML =
-                    `<i class="fas fa-check-circle me-1"></i> Disimpan ✓ — HP5: ${hp5Raw}/30 → ${hp5Scaled}/10 markah`;
-            }
-            showToast(`✓ Rubrik HP5 disimpan! ${hp5Raw}/30 → Markah HP5: ${hp5Scaled}/10`, 'success');
-            renderRubrikInputs(vData);
-            await _refreshLecturerData();
-        } else {
-            const badgeEl = document.getElementById('rubrikLecExistBadge');
-            if (badgeEl) {
-                badgeEl.style.display = 'flex';
-                badgeEl.innerHTML =
-                    `<i class="fas fa-clock me-1"></i> Data dihantar — semak dalam tab RUBRIK_HP5`;
-            }
-            showToast(
-                '✓ Data dihantar ke sheet. Jika tiada dalam senarai, klik pelajar semula untuk refresh.',
-                'warn'
-            );
-            await _refreshLecturerData();
-        }
-    } catch(e) {
-        showToast('Ralat sambungan: ' + e.message + ' — Semak tab RUBRIK_HP5 dalam sheet.', 'err');
-    }
-
-    btn.disabled  = false;
-    btn.innerHTML = '<i class="fas fa-save me-2"></i> SIMPAN MARKAH RUBRIK (HP1 + HP5)';
-}
-
-async function _refreshLecturerData() {
-    try {
-        const r2 = await fetch(`${API}?action=getLecturerStudents&email=${encodeURIComponent(curLecEmail)}`);
-        const o2 = await r2.json();
-        if (o2.data) {
-            sData  = o2.data;
-            curS   = sData.find(s => s.No_KP.toString().trim() === (curS?.No_KP?.toString().trim()||'')) || curS;
-            renderLecStudentList();
-            renderSummaryTable();
-        }
-    } catch(e) { /* silent fail */ }
-}
-
-function logout() { localStorage.clear(); location.reload(); }
-
-window.onload = () => {
-    const u = localStorage.getItem('userMPU');
-    if (u) { try { renderStudent(JSON.parse(u)); } catch(e) { localStorage.clear(); } }
-    const le = localStorage.getItem('le');
-    if (le) { initLecturer(le, localStorage.getItem('leName')); }
-};
-</script>
-
-<!-- ============================================================ -->
-<!-- FOOTER DISCLAIMER -->
-<!-- ============================================================ -->
-<div class="disclaimer-footer" id="mainFooter">
-    <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:6px;">
-        <i class="fas fa-shield-halved" style="color:var(--primary-light); font-size:13px;"></i>
-        <strong style="color:var(--text-muted); font-size:11px; letter-spacing:0.05em;">SISTEM MAKLUMAT SULIT</strong>
-        <i class="fas fa-shield-halved" style="color:var(--primary-light); font-size:13px;"></i>
-    </div>
-    <div>
-        Data dalam sistem ini adalah <strong style="color:var(--text-secondary);">SULIT</strong> dan tertakluk kepada
-        <strong style="color:var(--text-secondary);">Akta Perlindungan Data Peribadi 2010 (PDPA)</strong>.
-    </div>
-    <div style="margin-top:4px;">
-        Sistem Aplikasi Pemarkahan ini adalah untuk kegunaan eksklusif
-        <strong style="color:var(--text-secondary);">Unit Kokurikulum IPG Kampus Darulaman (IPGKDA)</strong>
-        bagi kod kursus <strong style="color:var(--primary);">MPU3221 Pengurusan Persatuan Di Sekolah</strong>.
-    </div>
-    <div style="margin-top:4px;">
-        Dibangunkan oleh <strong style="color:var(--text-secondary);">Penyelaras MPU3411 IPGKDA</strong> &nbsp;·&nbsp;
-        Sebarang penggunaan tanpa kebenaran adalah dilarang &nbsp;·&nbsp; © 2026 IPGKDA
-    </div>
-</div>
-
-</body>
-</html>
